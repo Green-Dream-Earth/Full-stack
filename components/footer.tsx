@@ -3,10 +3,10 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <div className="flex flex-col pt-12 md:pt-16 lg:pt-18">
-      <footer className="w-full"> 
-        <div className="aspect-[4/1] relative">
-          <iframe 
-          className="w-full h-full"
+      <footer className="w-full">
+        <div className="hidden md:block relative aspect-[4/1]">
+          <iframe
+            className="w-full h-full"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7198.662017705696!2d83.97258333791753!3d25.560652009914627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3992759f05555555%3A0x4a863a6a5b907dbb!2sGreen%20Dream%20Earth!5e0!3m2!1sen!2sin!4v1713641992953!5m2!1sen!2sin"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -19,25 +19,25 @@ export const Footer = () => {
               <div className="grid gap-2">
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="#"
+                  href="/about"
                 >
                   About
                 </Link>
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="#"
+                  href="/careers"
                 >
                   Careers
                 </Link>
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="#"
+                  href="/blog"
                 >
                   Blog
                 </Link>
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="#"
+                  href="/about"
                 >
                   Contact
                 </Link>
@@ -48,19 +48,19 @@ export const Footer = () => {
               <nav className="grid gap-2">
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="#"
+                  href="/booking"
                 >
                   Free Portfolio Review
                 </Link>
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="#"
+                  href="/booking"
                 >
                   Free 1:1 Consultation
                 </Link>
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="#"
+                  href="/more"
                 >
                   And Many More!
                 </Link>
@@ -91,19 +91,19 @@ export const Footer = () => {
             <div className="flex items-center space-x-4">
               <Link
                 className="text-sm hover:underline hover:underline-offset-2"
-                href="#"
+                href="/terms-and-policy"
               >
                 Privacy Policy
               </Link>
               <Link
                 className="text-sm hover:underline hover:underline-offset-2"
-                href="#"
+                href="/terms-and-policy"
               >
                 Terms of Service
               </Link>
               <Link
                 className="text-sm hover:underline hover:underline-offset-2"
-                href="#"
+                href="/terms-and-policy"
               >
                 Cookie Policy
               </Link>

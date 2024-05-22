@@ -1,74 +1,83 @@
+"use client";
+
 import { Input } from "@/components/ui/input";
 import { UniCard, UniSectionCard } from "@/components/uniCard";
+import { universityData } from "@/data/staticData";
+import { useState } from "react";
 
 export default function ExploreUniversities() {
+  const [searchFilter, setSearchFilter] = useState("");
   return (
     <section className="w-full pt-12 md:pt-16 lg:pt-18">
-      <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+      <div className="container mx-auto">
         <div className="flex flex-col gap-6 md:gap-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="grid gap-1">
-              <h1 className="text-3xl font-bold tracking-tight">
+              <h2 className="text-center md:text-left font-bold text-3xl w-full text-gray-600">
                 Top Universities
-              </h1>
-              <p className="text-gray-500 dark:text-gray-400">
+              </h2>
+              <p className="text-gray-700">
                 Explore the best universities around the world.
               </p>
             </div>
             <div className="w-full md:w-auto">
               <Input
                 className="w-full md:w-[300px]"
+                value={searchFilter}
                 placeholder="Search universities..."
+                onChange={(e) => {
+                  setSearchFilter(e.target.value);
+                }}
               />
             </div>
           </div>
-          <div className="grid md:gap-3 lg:grid-cols-6">
-            <div className="grid col-span-4 gap-3">
-              <UniCard
-                name={"Massachusetts Institute of Technology"}
-                rank={1}
-                location="Cambridge, MA, USA"
-              />
-              <UniCard
-                name={"Stanford University"}
-                rank={2}
-                location={"Cambridge, MA, USA"}
-              />
-              <UniCard
-                name={"California Institute of Technology"}
-                rank={3}
-                location={"Cambridge, MA, USA"}
-              />
-              <UniCard
-                name={"University of Oxford"}
-                rank={4}
-                location={"Cambridge, MA, USA"}
-              />
-            </div>
-            <div className="col-span-2 pt-8 md:pt-0">
-              <h3 className="text-xl font-semibold text-center">
-                Read More About the World University Rankings 2024
-              </h3>
+          <div className="grid md:gap-3 lg:grid-cols-6 pb-7">
+            <div className="col-span-2">
               <UniSectionCard
-                title={"STUDENT INSIGHTS"}
+                title={"Filter By Country"}
                 elements={[
                   {
                     id: 1,
-                    title: "Best Universities in World",
-                    link: "/abc",
+                    title: "United States",
+                    link: "/united_states",
                   },
                   {
                     id: 2,
-                    title: "Best Universities in UK",
+                    title: "United Kingdom",
                     link: "/uk",
                   },
                   {
                     id: 3,
-                    title: "Best Universities in INDIA",
+                    title: "Switzerland",
+                    link: "/swz",
+                  },
+                ]}
+              />
+              <UniSectionCard
+                title={"Filter By Fees"}
+                elements={[
+                  {
+                    id: 1,
+                    title: "$5k - $10k",
+                    link: "/abc",
+                  },
+                  {
+                    id: 2,
+                    title: "$11k - $20k",
+                    link: "/uk",
+                  },
+                  {
+                    id: 3,
+                    title: "$21k - $100k",
                     link: "/ind",
                   },
                 ]}
               />
+            </div>
+            <div className="grid col-span-4 gap-3">
+              {universityData.map((uni) => (
+                <UniCard key={uni.uni_id} data={uni} />
+              ))}
             </div>
           </div>
         </div>

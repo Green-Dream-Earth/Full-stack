@@ -1,3 +1,5 @@
+"use client";
+
 import {
   CardHeader,
   CardContent,
@@ -5,25 +7,67 @@ import {
   Card,
 } from "@/components/ui/card";
 import { MapPinIcon } from "@/pages/exploreUniversities";
+import { Label } from "@radix-ui/react-dropdown-menu";
+import { useRouter } from "next/navigation";
 
-export const UniCard = ({
-  name,
-  rank,
-  location,
-}: {
-  name: string;
-  rank: number;
-  location: string;
-}) => {
+interface UniversityProps {
+  uni_id: number;
+  QS_Rankings: number;
+  Times_Rankings: number;
+  university: string;
+  type: string;
+  slug: string;
+  country: string;
+  address: string;
+  uni_fees: {
+    out_of_state_tuition_fee: string;
+    accomodation_expenses: string;
+  };
+  exams_accepted?: any;
+  courses_offered: any;
+}
+
+export const UniCard = ({ data }: { data: UniversityProps }) => {
+  const router = useRouter();
   return (
-    <div className="grid gap-4 p-6 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
+    <div
+      onClick={() => router.push("/universities/" + data.slug)}
+      className="grid gap-4 p-6 rounded-lg border shadow-sm hover:cursor-pointer hover:shadow-xl hover:scale-[0.98] transform transition ease-in-out delay-100 hover:shadow-primary/10 bg-slate-50"
+    >
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold">{name}</h3>
-        <span className="font-semibold text-3xl font-semibold">{rank}</span>
-      </div>
-      <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-        <MapPinIcon className="w-4 h-4" />
-        {location}
+        <div className="flex flex-col items-start gap-2 text-sm text-gray-500">
+          <h3 className="text-lg font-semibold text-primary/90">
+            {data.university}
+          </h3>
+          <div className="flex gap-2 items-center">
+            <MapPinIcon className="w-4 h-4" />
+            <h3 className="">
+              {data.country} . {data.type}
+            </h3>
+          </div>
+          <div className="flex gap-3">
+            <div className="">
+              <p className="font-light">Courses offered</p>
+              <p className="">{`${data.courses_offered.length} Courses`}</p>
+            </div>
+            <div className="">
+              <p className="font-light">Exams Accepted</p>
+              {data.exams_accepted ? (
+                <p className="">
+                  {data.exams_accepted.length > 2
+                    ? `${data.exams_accepted[0]}, ${data.exams_accepted[1]}
+                     +${data.exams_accepted.length - 2}`
+                    : data.exams_accepted.join(", ")}
+                </p>
+              ) : (
+                <p className="">- / -</p>
+              )}
+            </div>
+          </div>
+        </div>
+        <span className="font-semibold text-3xl font-semibold">
+          {data.QS_Rankings}
+        </span>
       </div>
     </div>
   );
@@ -43,27 +87,36 @@ export const UniSectionCard = ({
   elements: UniCardElements[];
 }) => {
   return (
-    <Card className="w-full mt-6">
+    <Card className="w-full h-min mb-6 rounded-xl border-2 border-secondary/70 shadow-xl">
       <CardHeader className="flex items-center justify-between px-6 py-4">
         <div className="flex items-left space-x-4">
-          {/* <RocketIcon className="h-6 w-6 text-gray-500" /> */}
-          <h3 className="text-lg text-left font-semibold">{title}</h3>
+          <RocketIcon className="h-6 w-6 text-gray-500" />
+          <h3 className="text-lg text-left text-gray-500 font-semibold">
+            {title}
+          </h3>
         </div>
       </CardHeader>
       <CardContent>
-        <ul className="space-y-2">
+        <ul className="space-y-2 text-sm">
           {elements.map((element) => (
-            <li
-              key={element.id}
-              className="flex items-center justify-between border border-gray-200 p-4"
-            >
-              <span>{element.title}</span>
-              <ChevronRightIcon className="h-5 w-5 text-gray-500" />
+            <li key={element.id} className="flex items-center">
+              <input
+                id={element.title}
+                type="checkbox"
+                className="w-4 h-4 bg-secondary border-2 border-secondary rounded-lg text-secondary  cursor-pointer"
+                value={element.title}
+              />
+              <label
+                htmlFor={element.title}
+                className="ml-2 text-sm font-medium text-gray-700 cursor-pointer"
+              >
+                {element.title}
+              </label>
             </li>
           ))}
-          <li className="flex flex-col justify-center border border-pink-400 p-4">
+          {/* <li className="flex flex-col justify-center border border-pink-400 p-4">
             <p className="text-center p-0 m-0">More</p>
-          </li>
+          </li> */}
         </ul>
       </CardContent>
     </Card>

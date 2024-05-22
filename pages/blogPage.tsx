@@ -2,8 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { blogData } from "@/data/staticData";
-import { UniSectionCard } from "@/components/uniCard";
-import { Card, Space } from "antd";
+// import { Card, Space } from "antd";
 import Image from "next/image";
 
 export function FullBlog() {
@@ -167,7 +166,7 @@ export function FullBlog() {
           </div>
         </div>
         <div className="grid md:col-span-2 ">
-          <Space direction="vertical" size={16}>
+          {/* <Space direction="vertical" size={16}>
             <Card
               title="Recommended Blogs"
               // extra={<a href="#">More</a>}
@@ -179,7 +178,7 @@ export function FullBlog() {
               <p>Card content</p>
               <p>Card content</p>
             </Card>
-          </Space>
+          </Space> */}
         </div>
       </div>
     </main>

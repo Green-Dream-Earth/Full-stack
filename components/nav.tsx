@@ -1,13 +1,18 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
+import {
+  SheetTrigger,
+  SheetContent,
+  Sheet,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import AvatarDropdown from "./avatarDropdown";
 import { GraduationCap } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <header className="w-full bg-white shadow-sm dark:bg-gray-950">
+    <header className="w-full bg-white shadow-sm">
       <div className="container flex h-16 items-center justify-between ">
         <div className="flex gap-6 md:gap-10">
           <Link className="flex items-center gap-2" href="/">
@@ -68,35 +73,43 @@ export default function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent className="p-4" side="left">
-            <div className="mt-7 grid gap-4">
-              <Link
-                className="flex items-center justify-between text-sm font-medium hover:underline underline-offset-4"
-                href="/universities"
-              >
-                Explore Universities
-                <ChevronRightIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                className="flex items-center justify-between text-sm font-medium hover:underline underline-offset-4"
-                href="/blog"
-              >
-                Blogs
-                <ChevronRightIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                className="flex items-center justify-between text-sm font-medium hover:underline underline-offset-4"
-                href="/ask-our-experts"
-              >
-                Ask our Experts
-                <ChevronRightIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                className="flex items-center justify-between text-sm font-medium hover:underline underline-offset-4"
-                href="/about"
-              >
-                About
-                <ChevronRightIcon className="h-4 w-4" />
-              </Link>
+            <div className="mt-12 grid gap-4">
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/universities"
+                >
+                  Explore Universities
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/blog"
+                >
+                  Blogs
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/ask-our-experts"
+                >
+                  Ask our Experts
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/about"
+                >
+                  About
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
               <SignedOut>
                 <Link href={"/sign-in"}>
                   <Button size="sm" variant="outline">
@@ -109,7 +122,7 @@ export default function Navbar() {
                 <SignOutButton>
                   <Button
                     size="sm"
-                    className="bg-red-200 w-full"
+                    className="bg-red-600 text-slate-50 w-full"
                     variant="outline"
                   >
                     Sign Out

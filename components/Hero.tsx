@@ -6,9 +6,9 @@ export default function Hero() {
   return (
     <section key="1" className="">
       <div className="container grid gap-8 lg:grid-cols-2 lg:gap-1 ">
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 mt-8 md:mt-0">
           <div className="space-y-3">
-            <H1>Begin your Study Abroad Journey</H1>
+            <H1 className="">Begin your Study Abroad Journey</H1>
             <p className="text-lg font-semibold pt-4">
               Click below and take your best decision of the day!
             </p>

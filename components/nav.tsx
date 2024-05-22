@@ -119,25 +119,33 @@ export default function Navbar() {
                   <ChevronRightIcon className="h-4 w-4" />
                 </Link>
               </SheetTrigger>
-              <SignedOut>
-                <Link href={"/sign-in"}>
-                  <Button size="sm" variant="outline">
-                    Sign In
-                  </Button>
-                </Link>
-              </SignedOut>
-              <SignedIn>
-                {/* <AvatarDropdown /> */}
-                <SignOutButton>
-                  <Button
-                    size="sm"
-                    className="bg-red-600 text-slate-50 w-full"
-                    variant="outline"
-                  >
-                    Sign Out
-                  </Button>
-                </SignOutButton>
-              </SignedIn>
+              <SheetTrigger asChild>
+                <SignedOut>
+                  <Link href={"/sign-in"}>
+                    <Button
+                      size="sm"
+                      className="bg-secondary/80 text-slate-50 w-full"
+                      variant="outline"
+                    >
+                      Sign In
+                    </Button>
+                  </Link>
+                </SignedOut>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <SignedIn>
+                  {/* <AvatarDropdown /> */}
+                  <SignOutButton>
+                    <Button
+                      size="sm"
+                      className="bg-red-600 text-slate-50 w-full"
+                      variant="outline"
+                    >
+                      Sign Out
+                    </Button>
+                  </SignOutButton>
+                </SignedIn>
+              </SheetTrigger>
             </div>
           </SheetContent>
         </Sheet>

@@ -77,6 +77,15 @@ export default function Navbar() {
               <SheetTrigger asChild>
                 <Link
                   className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/"
+                >
+                  Home
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
                   href="/universities"
                 >
                   Explore Universities

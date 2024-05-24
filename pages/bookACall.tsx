@@ -2,7 +2,6 @@
 
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Select,
   SelectContent,
@@ -42,53 +41,34 @@ export default function BookingPage() {
               >
                 <form className="space-y-4 flex flex-col justify-center">
                   <div className="flex space-x-7">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">
+                    <div className="space-y-2 w-full">
+                      <Label htmlFor="">
                         Degree you&apos;re planning to study
                       </Label>
-                      <RadioGroup defaultValue="option-one">
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="bachelors" id="option-one" />
-                          <Label htmlFor="option-one">Bachelor&apos;s</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="masters" id="option-two" />
-                          <Label htmlFor="option-two">Master&apos;s</Label>
-                        </div>
-                      </RadioGroup>
+                      <Select>
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder="Bachelor's" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="light">Bachelor&apos;s</SelectItem>
+                          <SelectItem value="dark">Master&apos;s</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="name">
-                        When are you going to study abroad?
+                    <div className="space-y-2 w-full">
+                      <Label htmlFor="">
+                        Year you&apos;re planning to study abroad
                       </Label>
-                      <RadioGroup defaultValue="option-one">
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem
-                            value={date.toString()}
-                            id="option-one"
-                          />
-                          <Label htmlFor="option-one">{date.toString()}</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem
-                            value={(date + 1).toString()}
-                            id="option-two"
-                          />
-                          <Label htmlFor="option-two">
-                            {(date + 1).toString()}
-                          </Label>
-                        </div>
-
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem
-                            value={(date + 2).toString()}
-                            id="option-three"
-                          />
-                          <Label htmlFor="option-three">
-                            {(date + 2).toString()}
-                          </Label>
-                        </div>
-                      </RadioGroup>
+                      <Select>
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder="2025" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="light">2024</SelectItem>
+                          <SelectItem value="dark">2025</SelectItem>
+                          <SelectItem value="system">2026</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
                   <div className="flex space-x-7">
@@ -135,6 +115,7 @@ export default function BookingPage() {
                       </Select>
                     </div>
                   </div>
+
                   <Button
                     className="w-full text-slate-50"
                     onClick={() => {

@@ -6,9 +6,11 @@ import {
   CardFooter,
   Card,
 } from "@/components/ui/card";
+import { blogData } from "@/data/staticData";
 import { MapPinIcon } from "@/pages/exploreUniversities";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { useRouter } from "next/navigation";
+import { Button } from "./button";
 
 interface UniversityProps {
   uni_id: number;
@@ -32,7 +34,7 @@ export const UniCard = ({ data }: { data: UniversityProps }) => {
   return (
     <div
       onClick={() => router.push("/universities/" + data.slug)}
-      className="grid gap-4 p-6 rounded-lg border shadow-sm hover:cursor-pointer hover:shadow-xl hover:scale-[0.98] transform transition ease-in-out delay-100 hover:shadow-primary/10 bg-slate-50"
+      className="grid gap-4 p-6 rounded-lg border shadow-sm hover:cursor-pointer hover:shadow-xl hover:scale-[0.98] transform transition ease-in-out delay-100 hover:shadow-primary/10 "
     >
       <div className="flex items-center justify-between">
         <div className="flex flex-col items-start gap-2 text-sm text-gray-500">
@@ -73,27 +75,25 @@ export const UniCard = ({ data }: { data: UniversityProps }) => {
   );
 };
 
-interface UniCardElements {
+interface UniFilterElements {
   id: number;
   title: string;
   link: string;
 }
 
-export const UniSectionCard = ({
+export const UniFilterCard = ({
   title,
   elements,
 }: {
   title: string;
-  elements: UniCardElements[];
+  elements: UniFilterElements[];
 }) => {
   return (
-    <Card className="w-full h-min mb-6 rounded-xl border-2 border-secondary/70 shadow-xl">
-      <CardHeader className="flex items-center justify-between px-6 py-4">
+    <Card className="w-full h-min mb-6 rounded-xl border shadow">
+      <CardHeader className="px-6 py-4">
         <div className="flex items-left space-x-4">
-          <RocketIcon className="h-6 w-6 text-gray-500" />
-          <h3 className="text-lg text-left text-gray-500 font-semibold">
-            {title}
-          </h3>
+          {/* <RocketIcon className="h-6 w-6 text-gray-500" /> */}
+          <h3 className="text-gray-500 font-semibold">{title}</h3>
         </div>
       </CardHeader>
       <CardContent>
@@ -103,7 +103,7 @@ export const UniSectionCard = ({
               <input
                 id={element.title}
                 type="checkbox"
-                className="w-4 h-4 bg-secondary border-2 border-secondary rounded-lg text-secondary  cursor-pointer"
+                className="w-4 h-4 bg-secondary border-2 border-secondary rounded-lg text-secondary cursor-pointer"
                 value={element.title}
               />
               <label
@@ -120,6 +120,71 @@ export const UniSectionCard = ({
         </ul>
       </CardContent>
     </Card>
+  );
+};
+
+export const UniSectionCard = ({ title }: { title: string }) => {
+  return (
+    <Card className="w-full h-min mb-6 rounded-xl border shadow">
+      <CardHeader className="flex px-6 py-4">
+        <div className="flex items-left items-center space-x-4">
+          <span className="bg-slate-200 rounded-md w-12 h-12"></span>
+          <h3 className="text-xl text-left text-gray-800 font-semibold">
+            {title}
+          </h3>
+        </div>
+      </CardHeader>
+      <CardContent>
+        {blogData.slice(0, 3).map((element, index) => (
+          <UniSectionElement key={index} element={index} blogData={element} />
+        ))}
+      </CardContent>
+    </Card>
+  );
+};
+
+const UniSectionElement = ({
+  blogData,
+  element,
+}: {
+  blogData: any;
+  element: number;
+}) => {
+  return (
+    <div className="w-full mt-2">
+      <div className="h-full flex flex-col">
+        <div className=" flex flex-row justify-start">
+          <div className="flex-grow">
+            <h3 className="title-font font-medium text-sm text-gray-700">
+              {blogData.title}
+            </h3>
+            <div className="flex items-center">
+              <p className="text-gray-900 text-xs ">{blogData.author}</p>
+              <span className="text-center text-slate-500 mx-1">.</span>
+              <p className="text-slate-400 text-xs">{blogData.date}</p>
+            </div>
+            <div className="flex">
+              <p className="text-slate-400 text-xs">4.3K views</p>
+              <span className="text-center text-slate-500 mx-1">.</span>
+              <p className="text-slate-400 text-xs">69 comments</p>
+            </div>
+          </div>
+          <img
+            alt={blogData.title}
+            className="flex-shrink-0 rounded-lg w-24 h-24 bg-slate-200 object-cover object-center sm:mb-0 mb-4"
+            src={blogData.imageSrc}
+          />
+        </div>
+
+        {element !== 2 ? (
+          <span className="inline-block h-0.5 w-full rounded bg-slate-200 my-4"></span>
+        ) : (
+          <Button variant="primary" className="w-full mt-4 font-semibold">
+            Load More
+          </Button>
+        )}
+      </div>
+    </div>
   );
 };
 

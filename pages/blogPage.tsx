@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { blogData } from "@/data/staticData";
 // import { Card, Space } from "antd";
 import Image from "next/image";
+import { UniSectionCard } from "@/components/uniCard";
 
 export function FullBlog() {
   const params = useParams<{ slug: string }>();
@@ -15,8 +16,8 @@ export function FullBlog() {
 
   return (
     <main className="container pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased">
-      <div className="grid md:grid-cols-8 gap-4">
-        <div className="grid col-span-6 mx-auto w-full ">
+      <div className="grid md:grid-cols-6 gap-4">
+        <div className="grid col-span-4 mx-auto w-full ">
           <article className="">
             <header className="mb-4 lg:mb-6 not-format">
               <address className="flex items-center mb-6 not-italic">
@@ -51,7 +52,7 @@ export function FullBlog() {
           </article>
           <div className="w-full py-7 space-y-4">
             <h3 className="font-semibold text-gray-600">Add a Comment</h3>
-            <div className="w-full">
+            <div className="w-full ">
               <form className="flex items-center">
                 <label htmlFor="simple-search" className="sr-only">
                   Search
@@ -106,7 +107,7 @@ export function FullBlog() {
             </div>
 
             {/* Comment */}
-            <div className="flex items-start gap-2.5">
+            <div className="flex items-start gap-2.5 pl-7 pt-4">
               <Image
                 className="w-8 h-8 rounded-full object-cover "
                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
@@ -135,7 +136,7 @@ export function FullBlog() {
               </div>
             </div>
 
-            <div className="flex items-start gap-2.5">
+            <div className="flex items-start gap-2.5 pl-7">
               <Image
                 className="w-8 h-8 rounded-full object-cover"
                 src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
@@ -166,19 +167,7 @@ export function FullBlog() {
           </div>
         </div>
         <div className="grid md:col-span-2 ">
-          {/* <Space direction="vertical" size={16}>
-            <Card
-              title="Recommended Blogs"
-              // extra={<a href="#">More</a>}
-              className="w-full shadow shadow-lg border-secondary"
-            >
-              <p>Card content</p>
-              <p>Card content</p>
-              <p>Card content</p>
-              <p>Card content</p>
-              <p>Card content</p>
-            </Card>
-          </Space> */}
+          <UniSectionCard title={"Recommended Articles"} />
         </div>
       </div>
     </main>

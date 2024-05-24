@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import { UniCard, UniSectionCard } from "@/components/uniCard";
+import { UniCard, UniFilterCard, UniSectionCard } from "@/components/uniCard";
 import { universityData } from "@/data/staticData";
 import { useState } from "react";
 
@@ -31,9 +31,9 @@ export default function ExploreUniversities() {
               />
             </div>
           </div>
-          <div className="grid md:gap-3 lg:grid-cols-6 pb-7">
-            <div className="col-span-2">
-              <UniSectionCard
+          <div className="grid md:gap-3 lg:grid-cols-12 pb-7">
+            <div className="grid col-span-3 h-min">
+              <UniFilterCard
                 title={"Filter By Country"}
                 elements={[
                   {
@@ -53,7 +53,7 @@ export default function ExploreUniversities() {
                   },
                 ]}
               />
-              <UniSectionCard
+              <UniFilterCard
                 title={"Filter By Fees"}
                 elements={[
                   {
@@ -74,7 +74,7 @@ export default function ExploreUniversities() {
                 ]}
               />
             </div>
-            <div className="grid col-span-4 gap-3">
+            <div className="grid col-span-9 gap-3">
               {universityData.map((uni) => (
                 <UniCard key={uni.uni_id} data={uni} />
               ))}

@@ -20,7 +20,7 @@ export default function Hero() {
               </ul>
             </div>
           </div>
-          <div className="static flex flex-col pt-2 justify-between md:pt-6 gap-2 min-[400px]:flex-row">
+          <div className="static flex flex-col pt-2 md:pt-6 gap-2 min-[400px]:flex-row">
             <Button redirectPath="/booking">Connect with Expert</Button>
             <div className="hidden lg:block absolute transform translate-y-10 translate-x-48">
               <svg

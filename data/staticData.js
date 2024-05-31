@@ -303,6 +303,7 @@ const blogData = [{
 const universityData = [{
   uni_id: 1,
   QS_Rankings: 1,
+  description: "Massachusetts Institute of Technology is a private research university in Cambridge, Massachusetts. The institute has an urban campus that extends more than a mile alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
   Times_Rankings: 3,
   university: "Massachusetts Institute of Technology",
   campuses: 2,
@@ -317,6 +318,7 @@ const universityData = [{
   },
   exams_accepted: ["TOEFL", "IELTS", "GMAT", "DUOLINGO"],
   courses_offered: [{
+    exams_accepted: ["GRE", "TOEFL", "IELTS", "GMAT"],
     course_id: 1,
     course: "B.tech",
     title: "Computer Engineering",
@@ -365,6 +367,7 @@ const universityData = [{
 }, {
   uni_id: 2,
   QS_Rankings: 3,
+  description: "Massachusetts Institute of Technology is a private research university in Cambridge, Massachusetts. The institute has an urban campus that extends more than a mile alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
   Times_Rankings: 6,
   university: "University of Cambridge",
   campuses: 2,
@@ -378,6 +381,7 @@ const universityData = [{
     accomodation_expenses: "$16,390",
   },
   courses_offered: [{
+    exams_accepted: ["GRE", "TOEFL", "IELTS", "GMAT"],
     course_id: 1,
     course: "B.tech",
     title: "Computer Engineering",
@@ -411,6 +415,7 @@ const universityData = [{
 }, {
   uni_id: 3,
   QS_Rankings: 4,
+  description: "Massachusetts Institute of Technology is a private research university in Cambridge, Massachusetts. The institute has an urban campus that extends more than a mile alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
   Times_Rankings: 13,
   university: "Massachusetts Institute of Technology",
   campuses: 2,
@@ -425,6 +430,7 @@ const universityData = [{
   },
   exams_accepted: ["TOEFL", "IELTS", "GMAT", "DUOLINGO"],
   courses_offered: [{
+    exams_accepted: ["GRE", "TOEFL", "IELTS", "GMAT"],
     course_id: 1,
     course: "B.tech",
     title: "Computer Engineering",
@@ -458,6 +464,7 @@ const universityData = [{
 }, {
   uni_id: 4,
   QS_Rankings: 6,
+  description: "Massachusetts Institute of Technology is a private research university in Cambridge, Massachusetts. The institute has an urban campus that extends more than a mile alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
   Times_Rankings: 12,
   university: "Massachusetts Institute of Technology",
   campuses: 2,
@@ -471,6 +478,7 @@ const universityData = [{
     accomodation_expenses: "$16,390",
   },
   courses_offered: [{
+    exams_accepted: ["GRE", "TOEFL", "IELTS", "GMAT"],
     course_id: 1,
     course: "B.tech",
     title: "Computer Engineering",
@@ -504,6 +512,7 @@ const universityData = [{
 }, {
   uni_id: 5,
   QS_Rankings: 7,
+  description: "Massachusetts Institute of Technology is a private research university in Cambridge, Massachusetts. The institute has an urban campus that extends more than a mile alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
   Times_Rankings: 7,
   university: "Stanford University",
   campuses: 2,
@@ -518,6 +527,7 @@ const universityData = [{
   },
   exams_accepted: ["GRE", "TOEFL", "IELTS", "GMAT"],
   courses_offered: [{
+    exams_accepted: ["GRE", "TOEFL", "IELTS", "GMAT"],
     course_id: 1,
     course: "B.tech",
     title: "Computer Engineering",
@@ -590,3 +600,7 @@ export {
   universityData,
   expertsData
 };
+
+
+
+

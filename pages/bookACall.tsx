@@ -10,6 +10,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { useSession } from "@clerk/clerk-react";
+import Link from "next/link";
+
 import { InlineWidget } from "react-calendly";
 import { useState } from "react";
 import { H1 } from "@/components/heading";
@@ -17,6 +20,7 @@ import { H1 } from "@/components/heading";
 export default function BookingPage() {
   const date = new Date().getFullYear();
   const [calenderVisible, setCalenderVisible] = useState(false);
+  const { isSignedIn } = useSession();
   return (
     <>
       <section className="py-12 md:py-16 lg:py-18 bg-slate-50">
@@ -116,14 +120,21 @@ export default function BookingPage() {
                     </div>
                   </div>
 
-                  <Button
-                    className="w-full text-slate-50"
-                    onClick={() => {
-                      setCalenderVisible(true);
-                    }}
-                  >
-                    Continue
-                  </Button>
+                  {!isSignedIn ? (
+                    <Link href={"/sign-in"}>
+                      {" "}
+                      <Button className="w-full text-slate-50">Continue</Button>
+                    </Link>
+                  ) : (
+                    <Button
+                      className="w-full text-slate-50"
+                      onClick={() => {
+                        setCalenderVisible(true);
+                      }}
+                    >
+                      Continue
+                    </Button>
+                  )}
                 </form>
               </div>
             ) : (

@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/card";
 import { blogData } from "@/data/staticData";
 import { MapPinIcon } from "@/pages/exploreUniversities";
-import { Label } from "@radix-ui/react-dropdown-menu";
 import { useRouter } from "next/navigation";
 import { Button } from "./button";
 
@@ -179,7 +178,11 @@ const UniSectionElement = ({
         {element !== 2 ? (
           <span className="inline-block h-0.5 w-full rounded bg-slate-200 my-4"></span>
         ) : (
-          <Button variant="primary" className="w-full mt-4 font-semibold">
+          <Button
+            redirectPath="/blog"
+            variant="primary"
+            className="w-full mt-4 font-semibold"
+          >
             Load More
           </Button>
         )}

@@ -14,6 +14,7 @@ import { MapPinIcon } from "lucide-react";
 
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
+import { UniCourseCard } from "@/components/uniCourseCard";
 
 export default function UniversityDetails() {
   const onChange = (key: string) => {
@@ -120,7 +121,7 @@ function TabSection({ uni }: { uni: any }) {
             Table of Contents
           </AccordionTrigger>
           <AccordionContent>
-            <ul className="text-xl text-gray-400 list-disc list-inside">
+            <ul className="text-base text-blue-600 pl-4 list-disc list-inside">
               <li>Introduction</li>
               <li>History</li>
               <li>Location</li>
@@ -137,22 +138,20 @@ function TabSection({ uni }: { uni: any }) {
         >
           <AccordionTrigger className="text-xl mt-0 font-semibold text-gray-700">{`About ${uni?.university}`}</AccordionTrigger>
           <AccordionContent>
-            <p className="text-lg text-muted-foreground mt-2">
-              Oxford University, located at University Offices, Wellington
-              Square, Oxford OX1 2JD, United Kingdom, is one of the
-              world&lsquo;s leading academic institutions. With a rich history
-              dating back to the 12th century, it is the oldest university in
-              the English-speaking world. The university is renowned for its
-              distinctive collegiate system, where students and faculty interact
-              closely in pursuit of academic excellence. Oxford is known for its
-              rigorous academic programs, world-class research, and vibrant
-              campus life. Its notable alumni include numerous world leaders,
-              Nobel laureates, and other distinguished individuals in various
-              fields.
+            <p className="text-base text-muted-foreground mt-2">
+              {uni?.description}
             </p>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+      <div className="w-full space-y-7 border rounded-xl mt-4 p-6 shadow-lg">
+        <h3 className="text-xl mt-0 font-semibold text-gray-700">{`${uni.university} Programs`}</h3>
+        <div className="space-y-4">
+          {uni.courses_offered.map((course: any) => (
+            <UniCourseCard key={course.course_id} course={course} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

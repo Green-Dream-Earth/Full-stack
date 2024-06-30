@@ -222,37 +222,37 @@ const faqs = [
     id: 1,
     question: "What are the benefits of studying abroad?",
     answer:
-      "helpstudyabroad offer various services, including application assistance, career counseling, visa assistance, financial aid and scholarship assistance, in-country support services",
+      "Studying abroad offers numerous benefits, including access to world-class education and diverse academic programs, immersion in new cultures that enhances personal growth and global awareness, improved job prospects and international career opportunities, the opportunity to learn and master new languages, and the development of independence, adaptability, and a global perspective.",
   },
   {
     id: 2,
     question: "What is HelpStudyAbroad.com?",
     answer:
-      "helpstudyabroad offer various services, including application assistance, career counseling, visa assistance, financial aid and scholarship assistance, in-country support services",
+      "HelpStudyAbroad.com is a premier study abroad consulting agency dedicated to guiding students through every step of the journey to international education. From university selection to visa assistance, we offer comprehensive and world-class services to ensure a successful and enriching study abroad experience.",
   },
   {
     id: 3,
     question: "How can HelpStudyAbroad.com experts can help me study abroad?",
     answer:
-      "helpstudyabroad offer various services, including application assistance, career counseling, visa assistance, financial aid and scholarship assistance, in-country support services",
+      "At HelpStudyAbroad.com, we provide personalized guidance and support, including identifying the best-fit universities based on your goals and preferences, crafting compelling applications with essays and resumes, preparing for interviews, offering resources and support for standardized tests such as the SAT, ACT, GRE, GMAT, IELTS, and TOEFL, helping you find and apply for scholarships and financial aid, navigating the student visa application process smoothly, and preparing you for your new academic and cultural environment.",
   },
   {
     id: 4,
     question: "How can I study abroad if I am financially weak?",
     answer:
-      "helpstudyabroad offer various services, including application assistance, career counseling, visa assistance, financial aid and scholarship assistance, in-country support services",
+      "If you are financially constrained, there are several options to consider. You can choose from a number of public universities in Europe and Asia, as well as fully funded courses in private universities globally. Many universities and organizations offer scholarships and grants based on academic merit, financial need, or specific talents. You can explore financial aid packages provided by universities and governments, consider work-study programs in countries that allow international students to work part-time while studying, research education loans with favorable terms, or utilize crowdfunding platforms to raise funds for your education. We at HelpStudyAbroad.com can assist you in identifying and applying for these financial resources.",
   },
   {
     id: 5,
     question: "Why should I take expert guidance from HelpStudyAbroad.com?",
     answer:
-      "helpstudyabroad offer various services, including application assistance, career counseling, visa assistance, financial aid and scholarship assistance, in-country support services",
+      "Taking expert guidance from HelpStudyAbroad.com offers several advantages. Our team comprises experienced professionals with in-depth knowledge of international education and admissions. We provide tailored advice and support to ensure your unique needs are met, offering end-to-end services from university selection to post-arrival assistance. Our track record of successful student placements in top universities speaks for itself, and we simplify the complex process, reducing stress and increasing your chances of success.",
   },
   {
     id: 6,
     question: "Can I study abroad for free?",
     answer:
-      "helpstudyabroad offer various services, including application assistance, career counseling, visa assistance, financial aid and scholarship assistance, in-country support services",
+      "While studying abroad for free is challenging, it is possible through full scholarships offered by some universities and organizations that cover tuition, living expenses, and other costs. Participating in exchange programs where tuition fees are waived, securing fully funded programs offered by some governments for international students, such as numerous European public universities that charge less than EUR 800 (Rs 70,000) per semester fee from international students, and obtaining sponsorships from organizations, employers, or philanthropic entities can also make studying abroad free. We at HelpStudyAbroad.com can help you explore and apply for these opportunities.",
   },
 ];
 

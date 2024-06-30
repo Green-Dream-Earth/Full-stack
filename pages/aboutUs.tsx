@@ -11,7 +11,7 @@ export default function AboutUs() {
             <Image
               className="bg-slate-200 rounded-xl lg:order-first w-full"
               alt="hero"
-              src="https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78"
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df"
               height={500}
               width={500}
             />
@@ -22,10 +22,10 @@ export default function AboutUs() {
               {/* <br className="hidden lg:inline-block" /> */}
             </H1>
             <p className="my-8 leading-relaxed">
-              Copper mug try-hard pitchfork pour-over freegan heirloom neutra
-              air plant cold-pressed tacos poke beard tote bag. Heirloom echo
-              park mlkshk tote bag selvage hot chicken authentic tumeric
-              truffaut hexagon try-hard chambray.
+              Empowering students and young professionals gain access to world
+              class education regardless of their economic and financial
+              background. We bring 20+ years of combined experience to guide you
+              through every step of the process.
             </p>
             <div className="flex justify-center">
               <Button>Connect with Expert!</Button>
@@ -42,12 +42,15 @@ export default function AboutUs() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-center md:text-left font-bold text-3xl w-full">
-                Our Vision
+                Our Approach
               </h2>
               <p className="text-gray-500 text-lg  ">
-                To create cutting-edge technology that drives progress, fosters
-                collaboration, and inspires our team to push the boundaries of
-                what″s possible.
+                We believe in a student-centric approach, focusing on individual
+                needs and aspirations. Our team of experienced counsellors works
+                closely with each student, providing customized advice and
+                support throughout the entire process. We are committed to
+                excellence, integrity, and professionalism, ensuring that every
+                student receives the highest quality of service.
               </p>
             </div>
             <div>
@@ -55,9 +58,11 @@ export default function AboutUs() {
                 Our Mission
               </h2>
               <p className="text-gray-500 text-lg">
-                To create cutting-edge technology that drives progress, fosters
-                collaboration, and inspires our team to push the boundaries of
-                what&Prime;s possible.
+                At HelpStudyAbroad.com, our mission is to empower students with
+                the knowledge, resources, and guidance they need to realize
+                their academic dreams of studying in world top universities. We
+                strive to simplify the complex process of studying abroad,
+                making it accessible and stress-free for every aspiring student.
               </p>
             </div>
           </div>

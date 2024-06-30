@@ -5,8 +5,10 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import Providers from "./providers";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -32,9 +34,13 @@ export default function RootLayout({
         )}
       >
         <ClerkProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <Providers>
+            <AntdRegistry>
+              <Navbar />
+              {children}
+              <Footer />
+            </AntdRegistry>
+          </Providers>
         </ClerkProvider>
       </body>
     </html>

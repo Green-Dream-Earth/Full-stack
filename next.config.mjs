@@ -7,6 +7,24 @@ const nextConfig = {
         hostname: "**.unsplash.com",
         port: "",
       },
+
+      {
+        protocol: "https",
+        hostname: "**.images.shiksha.com/**",
+        port: "",
+      },
+
+      {
+        protocol: "https",
+        hostname: "img.clerk.com/**",
+        port: "",
+      },
+
+      {
+        protocol: "https",
+        hostname: "greendreamearth.org/**",
+        port: "",
+      },
     ],
   },
 };

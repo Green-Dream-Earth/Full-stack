@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { H1 } from "./heading";
 import { Button } from "./button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -44,7 +45,9 @@ export default function Hero() {
                 />
               </svg>
             </div>
-            <Button variant="secondary">Learn More</Button>
+            <Link href={"#reasons"}>
+              <Button variant="secondary">Learn More</Button>
+            </Link>
           </div>
         </div>
         <Image

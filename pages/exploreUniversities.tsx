@@ -2,11 +2,39 @@
 
 import { Input } from "@/components/ui/input";
 import { UniCard, UniFilterCard, UniSectionCard } from "@/components/uniCard";
-import { universityData } from "@/data/staticData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getUniversities } from "@/utils/query";
+import { useSearchParams } from "next/navigation";
+import PaginationComponent from "@/components/paginationComponent";
+import Loading from "@/components/loading";
 
 export default function ExploreUniversities() {
   const [searchFilter, setSearchFilter] = useState("");
+  const [page, setPage] = useState(1);
+  // get query param
+
+  // const searchParams = useSearchParams();
+
+  // const query = searchParams?.get("page");
+  // const page = parseInt(query || "");
+  // console.log("this is page number : " + page);
+
+  const { data, isPending, error } = useQuery({
+    queryKey: ["universities", page],
+    queryFn: () => getUniversities({ page }),
+  });
+
+  // if (isPending)
+  //   return (
+  //     <div className="min-h-screen">
+  //       <Loading />
+  //     </div>
+  //   );
+
+  if (error) return error?.message;
+  // console.log(isPending, error);
+
   return (
     <section className="w-full pt-12 md:pt-16 lg:pt-18">
       <div className="container mx-auto">
@@ -48,6 +76,16 @@ export default function ExploreUniversities() {
                   },
                   {
                     id: 3,
+                    title: "Canada",
+                    link: "/swz",
+                  },
+                  {
+                    id: 4,
+                    title: "Australia",
+                    link: "/swz",
+                  },
+                  {
+                    id: 5,
                     title: "Switzerland",
                     link: "/swz",
                   },
@@ -73,14 +111,54 @@ export default function ExploreUniversities() {
                   },
                 ]}
               />
+              <UniFilterCard
+                title={"Filter By Examination"}
+                elements={[
+                  {
+                    id: 1,
+                    title: "IELTS",
+                    link: "/abc",
+                  },
+                  {
+                    id: 2,
+                    title: "TOEFL",
+                    link: "/uk",
+                  },
+                  {
+                    id: 3,
+                    title: "Duolingo",
+                    link: "/ind",
+                  },
+                  {
+                    id: 4,
+                    title: "GRE",
+                    link: "/ind",
+                  },
+                  {
+                    id: 5,
+                    title: "GMAT",
+                    link: "/ind",
+                  },
+                  {
+                    id: 6,
+                    title: "PTE",
+                    link: "/ind",
+                  },
+                ]}
+              />
             </div>
             <div className="grid col-span-9 gap-3">
-              {universityData.map((uni) => (
-                <UniCard key={uni.uni_id} data={uni} />
-              ))}
+              {isPending ? (
+                <Loading />
+              ) : (
+                data?.data.map((uni: any) => (
+                  <UniCard key={uni.uni_id} data={uni} />
+                ))
+              )}
             </div>
           </div>
         </div>
+        <PaginationComponent page={page} setPage={setPage} />
       </div>
     </section>
   );

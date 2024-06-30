@@ -10,55 +10,74 @@ import { blogData } from "@/data/staticData";
 import { MapPinIcon } from "@/pages/exploreUniversities";
 import { useRouter } from "next/navigation";
 import { Button } from "./button";
+import { useQuery } from "@tanstack/react-query";
+import { getAllBlogs } from "@/utils/query";
+import Loading from "./loading";
+import { formatDate } from "@/lib/utils";
+import { extractImgSrc } from "./blogArticleCard";
+import Link from "next/link";
 
 interface UniversityProps {
-  uni_id: number;
-  QS_Rankings: number;
-  Times_Rankings: number;
-  university: string;
-  type: string;
-  slug: string;
+  _id: number;
+  qs_rankings: number;
+  times_rankings: number;
+  university_name: string;
+  university_type: string;
+  university_slug: string;
   country: string;
   address: string;
-  uni_fees: {
+  no_of_scholarships?: string;
+  university_website?: string;
+  university_logo?: string;
+  university_gallery: string[];
+  university_rating: number;
+  university_fees: {
     out_of_state_tuition_fee: string;
     accomodation_expenses: string;
   };
   exams_accepted?: any;
-  courses_offered: any;
+  requirements?: any;
+  programs_offered?: any;
 }
 
 export const UniCard = ({ data }: { data: UniversityProps }) => {
   const router = useRouter();
   return (
     <div
-      onClick={() => router.push("/universities/" + data.slug)}
+      onClick={() => router.push("/universities/" + data._id)}
       className="grid gap-4 p-6 rounded-lg border shadow-sm hover:cursor-pointer hover:shadow-xl hover:scale-[0.98] transform transition ease-in-out delay-100 hover:shadow-primary/10 "
     >
-      <div className="flex items-center justify-between">
+      <div className="flex justify-between">
         <div className="flex flex-col items-start gap-2 text-sm text-gray-500">
-          <h3 className="text-lg font-semibold text-primary/90">
-            {data.university}
-          </h3>
           <div className="flex gap-2 items-center">
-            <MapPinIcon className="w-4 h-4" />
-            <h3 className="">
-              {data.country} . {data.type}
+            <h3 className="text-lg font-semibold text-primary/90">
+              {data.university_name
+                ? data.university_name
+                : "NO NAME UNIVERSITY"}
             </h3>
-          </div>
-          <div className="flex gap-3">
-            <div className="">
-              <p className="font-light">Courses offered</p>
-              <p className="">{`${data.courses_offered.length} Courses`}</p>
+            <div className="flex ml-4 items-center">
+              {data.country ? (
+                <>
+                  <MapPinIcon className="w-4 h-4" />
+                  <h3 className="ml-2">{data.country}</h3>
+                </>
+              ) : (
+                ""
+              )}
             </div>
-            <div className="">
+          </div>
+          <div className="flex flex-col">
+            <div className="flex gap-2">
+              <p className="font-light">Programs offered</p>
+              <p className="font-semibold">{`${data.programs_offered?.length} Programs`}</p>
+            </div>
+            <div className="flex gap-2">
               <p className="font-light">Exams Accepted</p>
-              {data.exams_accepted ? (
-                <p className="">
-                  {data.exams_accepted.length > 2
-                    ? `${data.exams_accepted[0]}, ${data.exams_accepted[1]}
-                     +${data.exams_accepted.length - 2}`
-                    : data.exams_accepted.join(", ")}
+              {data.requirements ? (
+                <p className="font-semibold">
+                  {data.requirements.length > 2
+                    ? `${data.requirements[0]}, ${data.requirements[1]} `
+                    : `IELTS, TOEFL +2`}
                 </p>
               ) : (
                 <p className="">- / -</p>
@@ -67,7 +86,7 @@ export const UniCard = ({ data }: { data: UniversityProps }) => {
           </div>
         </div>
         <span className="font-semibold text-3xl font-semibold">
-          {data.QS_Rankings}
+          {data.times_rankings}
         </span>
       </div>
     </div>
@@ -123,6 +142,20 @@ export const UniFilterCard = ({
 };
 
 export const UniSectionCard = ({ title }: { title: string }) => {
+  const { data, isPending, error } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: getAllBlogs,
+  });
+
+  if (isPending)
+    return (
+      <div className="min-h-screen">
+        <Loading />
+      </div>
+    );
+  if (error) return error?.message;
+  console.log(data?.data, isPending, error);
+
   return (
     <Card className="w-full h-min mb-6 rounded-xl border shadow">
       <CardHeader className="flex px-6 py-4">
@@ -134,7 +167,7 @@ export const UniSectionCard = ({ title }: { title: string }) => {
         </div>
       </CardHeader>
       <CardContent>
-        {blogData.slice(0, 3).map((element, index) => (
+        {data?.data.slice(0, 3).map((element: any, index: any) => (
           <UniSectionElement key={index} element={index} blogData={element} />
         ))}
       </CardContent>
@@ -149,45 +182,49 @@ const UniSectionElement = ({
   blogData: any;
   element: number;
 }) => {
+  const imgSrc = extractImgSrc(blogData.content.rendered);
+
   return (
-    <div className="w-full mt-2">
-      <div className="h-full flex flex-col">
-        <div className=" flex flex-row justify-start">
-          <div className="flex-grow">
-            <h3 className="title-font font-medium text-sm text-gray-700">
-              {blogData.title}
-            </h3>
-            <div className="flex items-center">
-              <p className="text-gray-900 text-xs ">{blogData.author}</p>
-              <span className="text-center text-slate-500 mx-1">.</span>
-              <p className="text-slate-400 text-xs">{blogData.date}</p>
-            </div>
-            <div className="flex">
+    <Link href={`/blog/${blogData.slug}`}>
+      <div className="w-full mt-2">
+        <div className="h-full flex flex-col">
+          <div className=" flex flex-row justify-start">
+            <div className="flex-grow ">
+              <h3 className="title-font font-medium text-base text-gray-700">
+                {blogData.title.rendered}
+              </h3>
+              <div className="flex items-center">
+                {/* <p className="text-gray-900 text-xs ">John Doe</p>
+              <span className="text-center text-slate-500 mx-1">.</span> */}
+                <p className="text-slate-400 text-xs">
+                  {formatDate(blogData.modified)}
+                </p>
+              </div>
+              {/* <div className="flex">
               <p className="text-slate-400 text-xs">4.3K views</p>
               <span className="text-center text-slate-500 mx-1">.</span>
               <p className="text-slate-400 text-xs">69 comments</p>
+            </div> */}
             </div>
+            <img
+              alt={blogData.title.rendered}
+              className="flex-shrink-0 rounded-lg w-24 h-24 bg-slate-200 object-cover object-center sm:mb-0 mb-4"
+              src={imgSrc || ""}
+            />
           </div>
-          <img
-            alt={blogData.title}
-            className="flex-shrink-0 rounded-lg w-24 h-24 bg-slate-200 object-cover object-center sm:mb-0 mb-4"
-            src={blogData.imageSrc}
-          />
-        </div>
 
-        {element !== 2 ? (
-          <span className="inline-block h-0.5 w-full rounded bg-slate-200 my-4"></span>
-        ) : (
-          <Button
-            redirectPath="/blog"
-            variant="primary"
-            className="w-full mt-4 font-semibold"
-          >
-            Load More
-          </Button>
-        )}
+          {element !== 2 ? (
+            <span className="inline-block h-0.5 w-full rounded bg-slate-200 my-4"></span>
+          ) : (
+            <Link href={"/blog"}>
+              <Button variant="primary" className="w-full mt-4 font-semibold">
+                Load More
+              </Button>
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -80,28 +80,38 @@ export const Footer = () => {
               <div className="flex items-center space-x-4">
                 <Link
                   className="text-gray-400 hover:text-gray-300"
-                  href="https://www.youtube.com/@HelpStudyAbroad-dot-com"
+                  href="https://www.youtube.com/@HelpStudyAbroad"
+                  target="_blank"
                 >
                   <YoutubeIcon className="h-6 w-6" />
                 </Link>
                 <Link
                   className="text-gray-400 hover:text-gray-300"
                   href="https://www.facebook.com/helpstudyabroad.in/"
+                  target="_blank"
                 >
                   <FacebookIcon className="h-6 w-6" />
                 </Link>
                 <Link
                   className="text-gray-400 hover:text-gray-300"
                   href="https://www.linkedin.com/company/helpstudyabroad-dot-com/"
+                  target="_blank"
                 >
                   <LinkedinIcon className="h-6 w-6" />
                 </Link>
                 <Link
                   className="text-gray-400 hover:text-gray-300"
                   href="https://www.instagram.com/helpstudyabroad.co/"
-                  target=""
+                  target="_blank"
                 >
                   <InstagramIcon className="h-6 w-6" />
+                </Link>
+                <Link
+                  className="text-gray-400 hover:text-gray-300"
+                  href="https://x.com/HelpStudyAbrod"
+                  target="_blank"
+                >
+                  <TwitterIcon className="h-6 w-6" />
                 </Link>
               </div>
             </div>

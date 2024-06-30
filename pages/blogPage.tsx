@@ -1,30 +1,253 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { blogData } from "@/data/staticData";
 import Image from "next/image";
 import { UniSectionCard } from "@/components/uniCard";
 
 import { BlogSocialButtonGroup } from "@/components/blogSocialBtn";
 // import { SignupModal } from "@/components/signupModal";
 
-import { useSession } from "@clerk/clerk-react";
+import { useUser } from "@clerk/nextjs";
+import Loading from "@/components/loading";
+import { createBlogComment, getAllBlogs, getBlogComments } from "@/utils/query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { formatDate } from "@/lib/utils";
+import { Button, Form, Input } from "antd";
 import Link from "next/link";
 
 export function FullBlog() {
   const params = useParams<{ slug: string }>();
 
-  const { isSignedIn } = useSession();
+  const { isSignedIn, user, isLoaded } = useUser();
+
+  const queryClient = useQueryClient();
+
+  const [form] = Form.useForm();
+
+  const { data, isPending, error } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: getAllBlogs,
+  });
+
+  const blog = data?.data.find((blog: any) => blog.slug === params?.slug);
+  const slug = blog?.slug;
+  console.log("this is blog: ", slug);
+
+  const {
+    data: comments,
+    isPending: isLoadingBlogComments,
+    error: commentsError,
+  } = useQuery({
+    queryKey: ["fetchBlogComments", slug],
+    queryFn: () => getBlogComments(slug),
+    enabled: !!slug,
+  });
+
+  const mutation = useMutation({
+    mutationFn: (values) => createBlogComment(values),
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["fetchBlogComments"],
+      });
+      form.resetFields();
+    },
+  });
+
+  if (isPending)
+    return (
+      <div className="min-h-screen">
+        <Loading />
+      </div>
+    );
+  if (error) return error?.message;
+  console.log(data?.data, isPending, error);
 
   // check if the slug is present in the database and fetch it
 
-  const blog = blogData.find((blog) => blog.slug === params?.slug);
+  console.log(
+    "comments associated with blog",
+    comments?.data,
+    isLoadingBlogComments,
+    commentsError
+  );
 
+  const test = (testdata: any) => {
+    console.log("testdata :", testdata);
+    const data = {
+      message: testdata.message,
+      blogId: blog.id,
+      slug: blog.slug,
+      userId: user?.id || "",
+      userImg: user?.imageUrl || "",
+    };
+    // @ts-ignore
+    mutation.mutate(data);
+  };
   return (
     <main className="container pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased">
       <div className="grid md:grid-cols-6 gap-4">
-        <div className="grid col-span-4 mx-auto w-full ">
-          <article className="">
+        <div className="grid col-span-4 mx-auto w-full">
+          <BlogSocialButtonGroup blog={blog} />
+
+          <h2 className="pt-8">{blog.title.rendered}</h2>
+          <p className=" pb-8">{`Posted on ${formatDate(blog.date)}`}</p>
+          <div className="">
+            <div
+              className=""
+              contentEditable="true"
+              dangerouslySetInnerHTML={{ __html: blog.content.rendered }}
+            />
+          </div>
+
+          <h3 className="font-light text-3xl text-gray-600 pb-12">
+            <hr className="mt-24 mb-12 border-[0.5] border-slate-500" />
+            Add a Comment
+          </h3>
+          <div className="w-full ">
+            <Form
+              onFinish={test}
+              // action={createBlogComment}
+              className="flex items-center"
+              form={form}
+            >
+              <Form.Item name="userImg">
+                <Input
+                  hidden
+                  name="userImg"
+                  type="text"
+                  value={user?.imageUrl}
+                />
+              </Form.Item>
+              <label htmlFor="simple-search" className="sr-only">
+                Search
+              </label>
+              <div className="relative w-full">
+                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={18}
+                    height={18}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-message-circle text-gray-600"
+                  >
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                  </svg>
+                </div>
+                <Form.Item name="message">
+                  <Input
+                    type="text"
+                    name="message"
+                    id="simple-search"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                    placeholder="Post your thoughts ..."
+                  />
+                </Form.Item>
+              </div>
+              {!isSignedIn ? (
+                <Link href={"/sign-in"}>
+                  <Form.Item>
+                    <Button
+                      htmlType="submit"
+                      className="p-2.5 ms-2 text-sm font-medium text-white bg-secondary/80 rounded-lg border border-secondary/90 hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={18}
+                        height={18}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-send"
+                      >
+                        <path d="m22 2-7 20-4-9-9-4Z" />
+                        <path d="M22 2 11 13" />
+                      </svg>
+                    </Button>
+                  </Form.Item>
+                </Link>
+              ) : (
+                <Form.Item>
+                  <Button
+                    htmlType="submit"
+                    className="p-2.5 ms-2 text-sm font-medium text-white bg-secondary/80 rounded-lg border border-secondary/90 hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={18}
+                      height={18}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-send"
+                    >
+                      <path d="m22 2-7 20-4-9-9-4Z" />
+                      <path d="M22 2 11 13" />
+                    </svg>
+                    <span className="sr-only">Comment</span>
+                  </Button>
+                </Form.Item>
+              )}
+            </Form>
+          </div>
+
+          {/* Comment */}
+          {comments?.data.map((comment: any) => (
+            <div
+              key={crypto.randomUUID()}
+              className="flex items-start gap-2.5 pl-7 pt-4"
+            >
+              <Image
+                className="w-8 h-8 rounded-full object-cover "
+                src={comment.userImg}
+                height={12}
+                width={12}
+                alt="Jese image"
+              />
+              <div className="flex flex-col gap-1 w-[90%]">
+                <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                  <span className="text-sm font-semibold text-gray-900 ">
+                    Bonnie Green
+                  </span>
+                  <span className="text-sm font-normal text-gray-500 ">
+                    {formatDate(comment.createdAt)}
+                  </span>
+                </div>
+                <div className="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl">
+                  <p className="text-sm mt-0 font-normal text-gray-900 ">
+                    {comment.message}
+                  </p>
+                </div>
+                {/* <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+        11.50
+      </span> */}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid md:col-span-2 ">
+          <UniSectionCard title={"Recommended Articles"} />
+        </div>
+      </div>
+    </main>
+  );
+}
+
+export default FullBlog;
+
+{
+  /* <article className="">
             <header className="mb-4 lg:mb-6 not-format">
               <h1 className="mb-4 text-xl md:text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">
                 {blog?.title}
@@ -139,72 +362,63 @@ export function FullBlog() {
               </form>
             </div>
 
-            {/* Comment */}
-            <div className="flex items-start gap-2.5 pl-7 pt-4">
-              <Image
-                className="w-8 h-8 rounded-full object-cover "
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
-                height={12}
-                width={12}
-                alt="Jese image"
-              />
-              <div className="flex flex-col gap-1 w-[90%]">
-                <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                  <span className="text-sm font-semibold text-gray-900 ">
-                    Bonnie Green
-                  </span>
-                  <span className="text-sm font-normal text-gray-500 ">
-                    11:46
-                  </span>
-                </div>
-                <div className="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl">
-                  <p className="text-sm mt-0 font-normal text-gray-900 ">
-                    That&apos;s awesome. I think our users will really
-                    appreciate the improvements.
-                  </p>
-                </div>
-                {/* <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                  11.50
-                </span> */}
-              </div>
-            </div>
-
-            <div className="flex items-start gap-2.5 pl-7">
-              <Image
-                className="w-8 h-8 rounded-full object-cover"
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
-                height={12}
-                width={12}
-                alt="Jese image"
-              />
-              <div className="flex flex-col gap-1 w-[90%]">
-                <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                  <span className="text-sm font-semibold text-gray-900 ">
-                    Bonnie Green
-                  </span>
-                  <span className="text-sm font-normal text-gray-500 ">
-                    11:46
-                  </span>
-                </div>
-                <div className="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl">
-                  <p className="text-sm mt-0 font-normal text-gray-900 ">
-                    That&apos;s awesome. I think our users will really
-                    appreciate the improvements.
-                  </p>
-                </div>
-                {/* <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                  11.50
-                </span> */}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="grid md:col-span-2 ">
-          <UniSectionCard title={"Recommended Articles"} />
-        </div>
-      </div>
-    </main>
-  );
+            {/* Comment */
 }
+//   <div className="flex items-start gap-2.5 pl-7 pt-4">
+//     <Image
+//       className="w-8 h-8 rounded-full object-cover "
+//       src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+//       height={12}
+//       width={12}
+//       alt="Jese image"
+//     />
+//     <div className="flex flex-col gap-1 w-[90%]">
+//       <div className="flex items-center space-x-2 rtl:space-x-reverse">
+//         <span className="text-sm font-semibold text-gray-900 ">
+//           Bonnie Green
+//         </span>
+//         <span className="text-sm font-normal text-gray-500 ">
+//           11:46
+//         </span>
+//       </div>
+//       <div className="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl">
+//         <p className="text-sm mt-0 font-normal text-gray-900 ">
+//           That&apos;s awesome. I think our users will really
+//           appreciate the improvements.
+//         </p>
+//       </div>
+//       {/* <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+//         11.50
+//       </span> */}
+//     </div>
+//   </div>
 
-export default FullBlog;
+//   <div className="flex items-start gap-2.5 pl-7">
+//     <Image
+//       className="w-8 h-8 rounded-full object-cover"
+//       src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+//       height={12}
+//       width={12}
+//       alt="Jese image"
+//     />
+//     <div className="flex flex-col gap-1 w-[90%]">
+//       <div className="flex items-center space-x-2 rtl:space-x-reverse">
+//         <span className="text-sm font-semibold text-gray-900 ">
+//           Bonnie Green
+//         </span>
+//         <span className="text-sm font-normal text-gray-500 ">
+//           11:46
+//         </span>
+//       </div>
+//       <div className="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl">
+//         <p className="text-sm mt-0 font-normal text-gray-900 ">
+//           That&apos;s awesome. I think our users will really
+//           appreciate the improvements.
+//         </p>
+//       </div>
+//       {/* <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+//         11.50
+//       </span> */}
+//     </div>
+//   </div>
+// </div> */}

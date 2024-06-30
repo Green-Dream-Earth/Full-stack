@@ -9,20 +9,35 @@ import {
 import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import AvatarDropdown from "./avatarDropdown";
 import { GraduationCap } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <header className="w-full bg-white shadow-sm">
+    <header className="w-full sticky top-0 bg-white z-50 shadow-md">
       <div className="container flex h-16 items-center justify-between ">
         <div className="flex gap-6 md:gap-10">
           <Link className="flex items-center gap-2" href="/">
             {/* <MountainIcon className="h-6 w-6" /> */}
-            <GraduationCap className="h-6 w-6 text-primary" />
-            <span className="font-bold text-primary sm:inline-block">
-              HelpStudyAbroad.com
-            </span>
+            {/* <div className="">
+              <GraduationCap className="h-6 w-6 text-primary" />
+              <span className="font-bold text-primary sm:inline-block">
+                HelpStudyAbroad.com
+              </span>
+            </div> */}
+            <Image
+              src={"/HSA_Logo_Horizontal_Updated.svg"}
+              width={240}
+              height={120}
+              alt="HelpStudyAbroad.com"
+            />
           </Link>
           <div className="hidden lg:flex items-center gap-6">
+            <Link
+              className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
+              href="/"
+            >
+              Home
+            </Link>
             <Link
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/universities"
@@ -45,15 +60,26 @@ export default function Navbar() {
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/about"
             >
-              About
+              About Us
+            </Link>
+            <Link
+              className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
+              href="/contact-us"
+            >
+              Contact Us
             </Link>
           </div>
         </div>
         <div className="hidden lg:flex">
           <SignedOut>
             <Link href={"/sign-in"}>
-              <Button size="sm" variant="outline">
+              <Button className="mr-4" size="sm" variant="outline">
                 Sign In
+              </Button>
+            </Link>
+            <Link href={"/sign-up"}>
+              <Button size="sm" variant="outline">
+                Sign Up
               </Button>
             </Link>
           </SignedOut>

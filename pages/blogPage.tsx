@@ -5,7 +5,6 @@ import Image from "next/image";
 import { UniSectionCard } from "@/components/uniCard";
 
 import { BlogSocialButtonGroup } from "@/components/blogSocialBtn";
-// import { SignupModal } from "@/components/signupModal";
 
 import { useUser } from "@clerk/nextjs";
 import Loading from "@/components/loading";
@@ -14,11 +13,14 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { formatDate } from "@/lib/utils";
 import { Button, Form, Input } from "antd";
 import Link from "next/link";
+import TextArea from "antd/es/input/TextArea";
 
 export function FullBlog() {
   const params = useParams<{ slug: string }>();
 
   const { isSignedIn, user, isLoaded } = useUser();
+
+  console.log("This is user;s data : ", user);
 
   const queryClient = useQueryClient();
 
@@ -107,10 +109,10 @@ export function FullBlog() {
             <Form
               onFinish={test}
               // action={createBlogComment}
-              className="flex items-center"
+              className=""
               form={form}
             >
-              <Form.Item name="userImg">
+              <Form.Item name="userImg" hidden>
                 <Input
                   hidden
                   name="userImg"
@@ -121,12 +123,12 @@ export function FullBlog() {
               <label htmlFor="simple-search" className="sr-only">
                 Search
               </label>
-              <div className="relative w-full">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <div className="relative w-full flex items-center ">
+                {/* <div className="inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width={18}
-                    height={18}
+                    width={23}
+                    height={23}
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -137,21 +139,24 @@ export function FullBlog() {
                   >
                     <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
                   </svg>
-                </div>
-                <Form.Item name="message">
-                  <Input
-                    type="text"
-                    name="message"
-                    id="simple-search"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                    placeholder="Post your thoughts ..."
-                  />
+                </div> */}
+                <Form.Item
+                  name="message"
+                  id="simple-search"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                >
+                  <TextArea
+                    rows={6}
+                    className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                    placeholder="Write a comment..."
+                    required
+                  ></TextArea>
                 </Form.Item>
               </div>
               {!isSignedIn ? (
                 <Link href={"/sign-in"}>
                   <Form.Item>
-                    <Button
+                    {/* <Button
                       htmlType="submit"
                       className="p-2.5 ms-2 text-sm font-medium text-white bg-secondary/80 rounded-lg border border-secondary/90 hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 "
                     >
@@ -170,12 +175,18 @@ export function FullBlog() {
                         <path d="m22 2-7 20-4-9-9-4Z" />
                         <path d="M22 2 11 13" />
                       </svg>
+                    </Button> */}
+                    <Button
+                      htmlType="submit"
+                      className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-secondary/80 rounded-lg focus:ring-4 focus:ring-primary-200 hover:bg-secondary/90"
+                    >
+                      Post comment
                     </Button>
                   </Form.Item>
                 </Link>
               ) : (
                 <Form.Item>
-                  <Button
+                  {/* <Button
                     htmlType="submit"
                     className="p-2.5 ms-2 text-sm font-medium text-white bg-secondary/80 rounded-lg border border-secondary/90 hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300 "
                   >
@@ -195,6 +206,12 @@ export function FullBlog() {
                       <path d="M22 2 11 13" />
                     </svg>
                     <span className="sr-only">Comment</span>
+                  </Button> */}
+                  <Button
+                    htmlType="submit"
+                    className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
+                  >
+                    Post comment
                   </Button>
                 </Form.Item>
               )}
@@ -216,9 +233,9 @@ export function FullBlog() {
               />
               <div className="flex flex-col gap-1 w-[90%]">
                 <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                  <span className="text-sm font-semibold text-gray-900 ">
+                  {/* <span className="text-sm font-semibold text-gray-900 ">
                     Bonnie Green
-                  </span>
+                  </span> */}
                   <span className="text-sm font-normal text-gray-500 ">
                     {formatDate(comment.createdAt)}
                   </span>

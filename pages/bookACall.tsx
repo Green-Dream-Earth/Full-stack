@@ -45,9 +45,9 @@ export default function BookingPage() {
               >
                 <form className="space-y-4 flex flex-col justify-center">
                   <div className="flex space-x-7">
-                    <div className="space-y-2 w-full">
+                    <div className="space-y-2 ">
                       <Label htmlFor="">
-                        Degree you&apos;re planning to study
+                        Degree you&apos;re planning to study abroad
                       </Label>
                       <Select>
                         <SelectTrigger className="w-full">
@@ -59,7 +59,7 @@ export default function BookingPage() {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div className="space-y-2 w-full">
+                    <div className="space-y-2 ">
                       <Label htmlFor="">
                         Year you&apos;re planning to study abroad
                       </Label>
@@ -75,7 +75,7 @@ export default function BookingPage() {
                       </Select>
                     </div>
                   </div>
-                  <div className="flex space-x-7">
+                  {/* <div className="flex space-x-7">
                     <div className="space-y-2">
                       <Label htmlFor="">
                         How are you planning your study abroad process?
@@ -118,7 +118,7 @@ export default function BookingPage() {
                         </SelectContent>
                       </Select>
                     </div>
-                  </div>
+                  </div> */}
 
                   {!isSignedIn ? (
                     <Link href={"/sign-in"}>
@@ -147,14 +147,14 @@ export default function BookingPage() {
                 >
                   Back
                 </Button> */}
-                <InlineWidget url="https://calendly.com/pranav-v5qa/free-1-1-consultation" />
+                <InlineWidget url="https://calendly.com/tech-greendreamearth/30min" />
               </div>
             )}
           </div>
         </div>
       </section>
       <section className="py-12 md:py-16 lg:py-18 ">
-        <div className="container px-4 md:px-6 ">
+        <div className="container px-4 md:px-20">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             <div>
               <h2 className="text-center md:text-left font-bold text-3xl w-full">

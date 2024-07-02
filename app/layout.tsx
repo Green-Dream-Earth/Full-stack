@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import Providers from "./providers";
@@ -33,16 +34,17 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ClerkProvider>
-          <Providers>
-            <AntdRegistry>
+        <AntdRegistry>
+          <ClerkProvider>
+            <Providers>
               <Navbar />
               {children}
               <Footer />
-            </AntdRegistry>
-          </Providers>
-        </ClerkProvider>
+            </Providers>
+          </ClerkProvider>
+        </AntdRegistry>
       </body>
+      <GoogleAnalytics gaId="G-GFR3J5RWGW" />
     </html>
   );
 }

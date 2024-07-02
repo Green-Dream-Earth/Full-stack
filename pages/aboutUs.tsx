@@ -28,7 +28,7 @@ export default function AboutUs() {
               through every step of the process.
             </p>
             <div className="flex justify-center">
-              <Button>Connect with Expert!</Button>
+              <Button redirectPath="/booking">Connect with Expert!</Button>
               {/* <Button variant="secondary" className="ml-4">
                 Button
               </Button> */}
@@ -68,7 +68,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-      <section className=" text-gray-600">
+      {/* <section className=" text-gray-600">
         <div className="container ">
           <h2 className="font-bold text-center text-3xl w-full">Our Team</h2>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-center">
@@ -103,7 +103,7 @@ export default function AboutUs() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

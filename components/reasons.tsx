@@ -90,7 +90,7 @@ const Reasons = () => {
             height={500}
           /> */}
         </div>
-        <Button className="flex mx-auto mt-10 ">
+        <Button redirectPath="/booking" className="flex mx-auto mt-10 ">
           Book a Free Consultation now!
         </Button>
       </div>

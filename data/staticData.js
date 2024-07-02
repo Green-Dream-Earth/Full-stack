@@ -590,6 +590,29 @@ const expertsData = [{
   about: "Joe is a Expert Student Counsellor with a proven track record of driving growth and engagement for various student. He specializes in delivering excellent support to the student he mentors."
 },]
 
+const howitworks = [
+  {
+    id: 1,
+    description: "Submit Queries relevant to you",
+
+  }, {
+    id: 2,
+    description: "Get Matched with an Expert",
+
+  }, {
+    id: 3,
+    description: "We Schedule a call with you",
+
+  }, {
+    id: 4,
+    description: "Receive Advice Tailored to you",
+
+  }, {
+    id: 5,
+    description: "Take a Step closer to your dream!",
+
+  },]
+
 export {
   ourServicesData,
   testmonialData,
@@ -598,7 +621,8 @@ export {
   faqs,
   blogData,
   universityData,
-  expertsData
+  expertsData,
+  howitworks
 };
 
 

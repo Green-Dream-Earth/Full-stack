@@ -65,14 +65,23 @@ export const UniCard = ({ data }: { data: UniversityProps }) => {
                 ""
               )}
             </div>
-          </div>
-          <div className="flex flex-col">
             <div className="flex gap-2">
-              <p className="font-light">Programs offered</p>
+              <button className="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-md">
+                {`Times Ranking (THE) ${data.times_rankings}`}
+              </button>
+
+              <button className="bg-gray-200 text-blue-500 text-xs font-medium px-2.5 py-1 rounded-md">
+                {`Qs World Ranking ${data.qs_rankings}`}
+              </button>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex gap-2">
+              <p className="font-light">Programs offered:</p>
               <p className="font-semibold">{`${data.programs_offered?.length} Programs`}</p>
             </div>
             <div className="flex gap-2">
-              <p className="font-light">Exams Accepted</p>
+              <p className="font-light">Exams Accepted:</p>
               {data.requirements ? (
                 <p className="font-semibold">
                   {data.requirements.length > 2

@@ -12,6 +12,7 @@ import Loading from "@/components/loading";
 export default function ExploreUniversities() {
   const [searchFilter, setSearchFilter] = useState("");
   const [page, setPage] = useState(1);
+
   // get query param
 
   // const searchParams = useSearchParams();

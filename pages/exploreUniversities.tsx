@@ -23,7 +23,7 @@ export default function ExploreUniversities() {
 
   const { data, isPending, error } = useQuery({
     queryKey: ["universities", page],
-    queryFn: () => getUniversities({ page }),
+    queryFn: () => getUniversities({ page, searchString: searchFilter }),
   });
 
   // if (isPending)

@@ -19,9 +19,9 @@ const config = {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-      },
+      // fontFamily: {
+      //   sans: ["var(--font-sans)", ...fontFamily.sans],
+      // },
       colors: {
         yellow: {
           "50": "#FFFAEB",

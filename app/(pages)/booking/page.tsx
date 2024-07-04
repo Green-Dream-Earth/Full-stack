@@ -1,5 +1,7 @@
-import BookingPage from "@/pages/bookACall";
-
 export default function Booking() {
-  return <BookingPage />;
+  return (
+    <div>
+      <h1>Booking</h1>
+    </div>
+  );
 }

@@ -1,19 +1,18 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import Image from "next/image";
 import { UniSectionCard } from "@/components/uniCard";
+import Image from "next/image";
+import { useParams } from "next/navigation";
 
 import { BlogSocialButtonGroup } from "@/components/blogSocialBtn";
 
-import { useUser } from "@clerk/nextjs";
 import Loading from "@/components/loading";
-import { createBlogComment, getAllBlogs, getBlogComments } from "@/utils/query";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { formatDate } from "@/lib/utils";
+import { createBlogComment, getAllBlogs, getBlogComments } from "@/utils/query";
+import { useUser } from "@clerk/nextjs";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button, Form, Input } from "antd";
 import Link from "next/link";
-import TextArea from "antd/es/input/TextArea";
 
 export function FullBlog() {
   const params = useParams<{ slug: string }>();
@@ -145,12 +144,11 @@ export function FullBlog() {
                   id="simple-search"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                 >
-                  <TextArea
-                    rows={6}
+                  <Input
                     className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                     placeholder="Write a comment..."
                     required
-                  ></TextArea>
+                  ></Input>
                 </Form.Item>
               </div>
               {!isSignedIn ? (

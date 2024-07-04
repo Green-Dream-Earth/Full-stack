@@ -1,7 +1,5 @@
 import { Button } from "@/components/button";
-import { ExperCard } from "@/components/expertCards";
 import { H1 } from "@/components/heading";
-import { expertsData } from "@/data/staticData";
 
 import { howitworks } from "@/data/staticData";
 import Image from "next/image";
@@ -193,7 +191,7 @@ export default function AskOurExperts() {
                 <p className="leading-relaxed">
                   I highly recommend HelpStudyAbroad.com for anyone considering
                   studying overseas. Their expertise, professionalism, and
-                  genuine care for students' success set them apart and made my
+                  genuine care for students success set them apart and made my
                   experience truly memorable.
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-primary mt-6 mb-4" />

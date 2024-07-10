@@ -8,6 +8,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import Providers from "./providers";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "helpstudyabroad",
@@ -27,13 +28,13 @@ export default function RootLayout({
         )}
       >
         <AntdRegistry>
-          {/* <ClerkProvider> */}
-          <Providers>
-            <Navbar />
-            {children}
-            <Footer />
-          </Providers>
-          {/* </ClerkProvider> */}
+          <ClerkProvider>
+            <Providers>
+              <Navbar />
+              {children}
+              <Footer />
+            </Providers>
+          </ClerkProvider>
         </AntdRegistry>
       </body>
       <GoogleAnalytics gaId="G-GFR3J5RWGW" />

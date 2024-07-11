@@ -47,37 +47,37 @@ const SevenStepProcessData = [
   {
     id: 1,
     title: "Step 1",
-    description: "Onboarding - understanding your profile",
+    description: "Onboarding - Understanding Your Profile",
     iconName: "TicketIcon",
   },
   {
     id: 2,
     title: "Step 2",
-    description: "University &amp; Course selection",
+    description: "University & Course Selection",
     iconName: "TicketIcon",
   },
   {
     id: 3,
     title: "Step 3",
-    description: "Application Prep &amp; Submission",
+    description: "Application Prep & Submission",
     iconName: "TicketIcon",
   },
   {
     id: 4,
     title: "Step 4",
-    description: "Scholarship search and application",
+    description: "Scholarship Search and Application",
     iconName: "TicketIcon",
   },
   {
     id: 5,
     title: "Step 5",
-    description: "Admission offers.Financial Planning",
+    description: "Admission Offers & Financial Planning",
     iconName: "TicketIcon",
   },
   {
     id: 6,
     title: "Step 6",
-    description: "Visa &amp; Immigration Guide",
+    description: "Visa & Immigration Guide",
     iconName: "TicketIcon",
   },
 ];

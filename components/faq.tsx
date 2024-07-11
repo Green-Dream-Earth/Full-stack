@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqs } from "@/data/staticData";
+import { Button } from "./button";
 
 export function Faq() {
   return (
@@ -20,8 +21,9 @@ export function Faq() {
             <AccordionTrigger className="text-left">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="text-gray-600">
-              {faq.answer}
+            <AccordionContent className="flex justify-between text-gray-600">
+              <div className="w-[70%]">{faq.answer}</div>
+              <Button variant="secondary" redirectPath="/booking" className="h-12">Take Action Now!</Button>
             </AccordionContent>
           </AccordionItem>
         ))}

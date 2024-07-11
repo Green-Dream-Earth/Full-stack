@@ -44,17 +44,18 @@ export default function AskOurExperts() {
           </div>
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left text-center">
             <div className="space-y-2 mb-4">
-              <H1>Ask Our Experts</H1>
+              <H1 className="mb-4">Ask Our Experts</H1>
               <p className="max-w-[700px] text-gray-500 md:text-xl">
-                Planning to study abroad can be an exciting yet overwhelming
-                experience. Our team of seasoned professionals is dedicated to
-                guiding you through every step of the process, ensuring that you
-                make informed decisions and achieve your academic goals. Whether
-                you need help with university selection, application procedures,
-                or visa advice, we are here to assist you.
+                Planning to study abroad can be an exciting yet
+                overwhelming experience. Our experts are dedicated to
+                guiding you through every step of the process, ensuring that
+                you make informed decisions and achieve your academic
+                goals. Whether you need help with university selection,
+                application procedures, SAT/GRE exam preparation or visa
+                advice, we are here to assist you.
               </p>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-7">
               <Button variant="secondary" redirectPath="/booking">
                 Connect with an Expert
               </Button>
@@ -109,14 +110,13 @@ export default function AskOurExperts() {
                   </div>
                   <h3
                     className="title-font text-base text-gray-700 px-4"
-                    // style={{
-                    //   padding: index % 2 == 0 ? "" : "row-reverse",
-                    // }}
+                  // style={{
+                  //   padding: index % 2 == 0 ? "" : "row-reverse",
+                  // }}
                   >
                     <span className="font-semibold text-primary">
-                      {`${reason.description.split(" ")[0]} ${
-                        reason.description.split(" ")[1]
-                      }`}
+                      {`${reason.description.split(" ")[0]} ${reason.description.split(" ")[1]
+                        }`}
                     </span>
                     &nbsp;
                     {reason.description.split(" ").slice(2).join(" ")}

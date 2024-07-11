@@ -49,23 +49,25 @@ export const UniCard = ({ data }: { data: UniversityProps }) => {
     >
       <div className="flex justify-between">
         <div className="flex flex-col items-start gap-2 text-sm text-gray-500">
-          <div className="flex gap-2 items-center">
-            <h3 className="text-lg font-semibold text-primary/90">
-              {data.university_name
-                ? data.university_name
-                : "NO NAME UNIVERSITY"}
-            </h3>
-            <div className="flex ml-4 items-center">
-              {data.country ? (
-                <>
-                  <MapPinIcon className="w-4 h-4" />
-                  <h3 className="ml-2">{data.country}</h3>
-                </>
-              ) : (
-                ""
-              )}
+          <div className="flex justify-between gap-2 items-center">
+            <div className="flex gap-2 items-center">
+              <h3 className="text-lg font-semibold text-primary/90">
+                {data.university_name
+                  ? data.university_name
+                  : "NO NAME UNIVERSITY"}
+              </h3>
+              <div className="flex ml-4 items-center">
+                {data.country ? (
+                  <>
+                    <MapPinIcon className="w-4 h-4" />
+                    <h3 className="ml-2">{data.country}</h3>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
-            <div className="flex gap-2">
+            <div className="hidden md:flex gap-2">
               <button className="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-md">
                 {`Times Ranking (THE) ${data.times_rankings}`}
               </button>
@@ -75,7 +77,7 @@ export const UniCard = ({ data }: { data: UniversityProps }) => {
               </button>
             </div>
           </div>
-          <div className="flex gap-4">
+          <div className="hidden md:flex gap-4">
             <div className="flex gap-2">
               <p className="font-light">Programs offered:</p>
               <p className="font-semibold">{`${data.programs_offered?.length} Programs`}</p>
@@ -94,9 +96,9 @@ export const UniCard = ({ data }: { data: UniversityProps }) => {
             </div>
           </div>
         </div>
-        <span className="font-semibold text-3xl font-semibold">
+        {/* <span className="font-semibold text-3xl font-semibold">
           {data.times_rankings}
-        </span>
+        </span> */}
       </div>
     </div>
   );

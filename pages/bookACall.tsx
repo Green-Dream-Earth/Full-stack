@@ -75,6 +75,8 @@ function BookingPage() {
                       </Select>
                     </div>
                   </div>
+
+
                   {/* <div className="flex space-x-7">
                     <div className="space-y-2">
                       <Label htmlFor="">
@@ -135,6 +137,8 @@ function BookingPage() {
                       Continue
                     </Button>
                   )} */}
+
+                  
                 </form>
               </div>
             ) : (

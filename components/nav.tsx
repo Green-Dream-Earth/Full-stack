@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/sheet";
 import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import AvatarDropdown from "./avatarDropdown";
-import { GraduationCap } from "lucide-react";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -25,6 +24,7 @@ export default function Navbar() {
               </span>
             </div> */}
             <Image
+            className="-ml-7"
               src={"/HSA_Logo_Horizontal_Updated.svg"}
               width={240}
               height={120}

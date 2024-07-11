@@ -47,37 +47,37 @@ const SevenStepProcessData = [
   {
     id: 1,
     title: "Step 1",
-    description: "Onboarding University and program selection",
+    description: "Onboarding - understanding your profile",
     iconName: "TicketIcon",
   },
   {
     id: 2,
     title: "Step 2",
-    description: "In-depth research and preparation of application material",
+    description: "University &amp; Course selection",
     iconName: "TicketIcon",
   },
   {
     id: 3,
     title: "Step 3",
-    description: "Test preparation guidance",
+    description: "Application Prep &amp; Submission",
     iconName: "TicketIcon",
   },
   {
     id: 4,
     title: "Step 4",
-    description: "Application submission (including eligible scholarships)",
+    description: "Scholarship search and application",
     iconName: "TicketIcon",
   },
   {
     id: 5,
     title: "Step 5",
-    description: "Admission offers.",
+    description: "Admission offers.Financial Planning",
     iconName: "TicketIcon",
   },
   {
     id: 6,
     title: "Step 6",
-    description: "Fees and financing",
+    description: "Visa &amp; Immigration Guide",
     iconName: "TicketIcon",
   },
 ];
@@ -199,7 +199,7 @@ const fiveReasons = [
   },
   {
     id: 5,
-    description: "Lastly, your first call is totally free on us.",
+    description: "lastly, bonus on becoming an action taker today and booking a free consultation now",
     svg: (
       <svg
         fill="none"

@@ -80,7 +80,7 @@ function ContactUs() {
                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
                   OR GIVE US A CALL
                 </h2>
-                <p className="leading-relaxed">+91 9625061184 </p>
+                <p className="leading-relaxed">+44 7501908688</p>
               </div>
             </div>
           </div>
@@ -227,7 +227,7 @@ function ContactUs() {
       <section id="reasons" className="text-gray-600 bg-slate-50 py-10">
         <div className="container mx-auto flex flex-wrap">
           <h2 className="text-center font-bold text-3xl w-full mx-auto">
-            How To Connect With Us
+          What Happens After You Contact Us For free Consultation
           </h2>
           {/* <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-center">
             Our team with combined experience of 20+ years will help you at

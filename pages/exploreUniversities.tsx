@@ -61,7 +61,7 @@ export default function ExploreUniversities() {
             </div>
           </div>
           <div className="grid md:gap-3 lg:grid-cols-12 pb-7">
-            <div className="grid col-span-3 h-min">
+            <div className="hidden lg:grid col-span-3 h-min">
               <UniFilterCard
                 title={"Filter By Country"}
                 elements={[

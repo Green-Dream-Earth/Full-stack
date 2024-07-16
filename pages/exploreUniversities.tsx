@@ -5,7 +5,6 @@ import { UniCard, UniFilterCard, UniSectionCard } from "@/components/uniCard";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getUniversities } from "@/utils/query";
-import { useSearchParams } from "next/navigation";
 import PaginationComponent from "@/components/paginationComponent";
 import Loading from "@/components/loading";
 
@@ -22,8 +21,8 @@ export default function ExploreUniversities() {
   // console.log("this is page number : " + page);
 
   const { data, isPending, error } = useQuery({
-    queryKey: ["universities", page],
-    queryFn: () => getUniversities({ page }),
+    queryKey: ["universities", page, searchFilter],
+    queryFn: () => getUniversities({ page, searchFilter }),
   });
 
   // if (isPending)

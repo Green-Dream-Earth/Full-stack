@@ -1,10 +1,11 @@
 import { API_PATH } from "@/utils/apiPath";
 import axios from "axios";
 
-export const getUniversities = async ({ page }: { page: number }) => {
-    console.log("this is page : " + page)
+export const getUniversities = async ({ page, searchFilter }: { page: number, searchFilter?: string }) => {
+    console.log("this is string : " + searchFilter)
+
     try {
-        const universities = axios.get(`${API_PATH}/universities?page=${page}`);
+        const universities = axios.get(`${API_PATH}/universities?page=${page}&search=${searchFilter}`);
         return universities;
 
     } catch (error) {

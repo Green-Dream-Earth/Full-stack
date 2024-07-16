@@ -27,7 +27,7 @@ export const Footer = () => {
                   className="hover:underline hover:underline-offset-2"
                   href="/careers"
                 >
-                  Careers
+                  Apply on LinkedIn
                 </Link>
                 <Link
                   className="hover:underline hover:underline-offset-2"
@@ -44,7 +44,7 @@ export const Footer = () => {
               </div>
             </div>
             <div className="space-y-4 col-span-2">
-              <h4 className="text-lg font-semibold">World Top Universities</h4>
+              <h4 className="text-lg font-semibold">Top 10 Universities</h4>
               <nav className="grid gap-2 text-gray-400">
                 <FooterElement
                   title="University of Cambridge, UK"
@@ -73,6 +73,9 @@ export const Footer = () => {
                 <FooterElement title="United Kingdom" />
                 <FooterElement title="Canada" />
                 <FooterElement title="Australia" />
+                <FooterElement title="Newzeland" />
+                <FooterElement title="Ireland" />
+                <FooterElement title="Germany" />
               </nav>
             </div>
             <div className="space-y-4 col-span-2">

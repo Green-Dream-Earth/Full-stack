@@ -10,7 +10,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { useSession } from "@clerk/clerk-react";
+// import { useSession } from "@clerk/clerk-react";
+
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+
 import Link from "next/link";
 
 import { H1 } from "@/components/heading";
@@ -122,12 +125,14 @@ function BookingPage() {
                     </div>
                   </div> */}
 
-                  {/* {!isSignedIn ? (
+                  {/* <SignedIn> */}
                     <Link href={"/sign-in"}>
                       {" "}
                       <Button className="w-full text-slate-50">Continue</Button>
                     </Link>
-                  ) : (
+                  {/* </SignedIn> */}
+
+                  <SignedIn>
                     <Button
                       className="w-full text-slate-50"
                       onClick={() => {
@@ -136,21 +141,22 @@ function BookingPage() {
                     >
                       Continue
                     </Button>
-                  )} */}
+                  </SignedIn>
 
-                  
+
+
                 </form>
               </div>
             ) : (
               <div className="">
-                {/* <Button
+                <Button
                   className="btn"
                   onClick={() => {
                     setCalenderVisible(false);
                   }}
                 >
                   Back
-                </Button> */}
+                </Button>
                 <InlineWidget url="https://calendly.com/tech-greendreamearth/30min" />
               </div>
             )}

@@ -125,12 +125,12 @@ function BookingPage() {
                     </div>
                   </div> */}
 
-                  {/* <SignedIn> */}
+                  <SignedOut>
                     <Link href={"/sign-in"}>
                       {" "}
                       <Button className="w-full text-slate-50">Continue</Button>
                     </Link>
-                  {/* </SignedIn> */}
+                  </SignedOut>
 
                   <SignedIn>
                     <Button

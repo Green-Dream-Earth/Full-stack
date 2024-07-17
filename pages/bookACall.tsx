@@ -150,7 +150,7 @@ function BookingPage() {
             ) : (
               <div className="">
                 <Button
-                  className="btn"
+                  variant={"secondary"}
                   onClick={() => {
                     setCalenderVisible(false);
                   }}

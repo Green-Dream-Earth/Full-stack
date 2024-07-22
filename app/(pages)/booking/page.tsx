@@ -1,5 +1,7 @@
-import BookingPage from "@/pages/bookACall";
+import BookACall from "@/pages/bookACall";
 
 export default function Booking() {
-  return <BookingPage />;
+  return (
+    <BookACall />
+  );
 }

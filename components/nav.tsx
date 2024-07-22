@@ -1,27 +1,49 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
+import {
+  SheetTrigger,
+  SheetContent,
+  Sheet,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import AvatarDropdown from "./avatarDropdown";
-import { GraduationCap } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <header className="w-full bg-white shadow-sm dark:bg-gray-950">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+    <header className="w-full sticky top-0 bg-white z-50 shadow-md">
+      <div className="container flex h-16 items-center justify-between ">
         <div className="flex gap-6 md:gap-10">
           <Link className="flex items-center gap-2" href="/">
             {/* <MountainIcon className="h-6 w-6" /> */}
-            <GraduationCap className="h-6 w-6" />
-            <span className="font-bold sm:inline-block">helpstudyabroad</span>
+            {/* <div className="">
+              <GraduationCap className="h-6 w-6 text-primary" />
+              <span className="font-bold text-primary sm:inline-block">
+                HelpStudyAbroad.com
+              </span>
+            </div> */}
+            <Image
+            className="-ml-7"
+              src={"/HSA_Logo_Horizontal_Updated.svg"}
+              width={240}
+              height={120}
+              alt="HelpStudyAbroad.com"
+            />
           </Link>
           <div className="hidden lg:flex items-center gap-6">
             <Link
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
+              href="/"
+            >
+              Home
+            </Link>
+            {/* <Link
+              className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/universities"
             >
               Explore Universities
-            </Link>
+            </Link> */}
             <Link
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/blog"
@@ -38,15 +60,26 @@ export default function Navbar() {
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/about"
             >
-              About
+              About Us
+            </Link>
+            <Link
+              className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
+              href="/contact-us"
+            >
+              Contact Us
             </Link>
           </div>
         </div>
         <div className="hidden lg:flex">
           <SignedOut>
             <Link href={"/sign-in"}>
-              <Button size="sm" variant="outline">
+              <Button className="mr-4" size="sm" variant="outline">
                 Sign In
+              </Button>
+            </Link>
+            <Link href={"/sign-up"}>
+              <Button size="sm" variant="outline">
+                Sign Up
               </Button>
             </Link>
           </SignedOut>
@@ -66,54 +99,79 @@ export default function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent className="p-4" side="left">
-            <div className="mt-7 grid gap-4">
-              <Link
-                className="flex items-center justify-between text-sm font-medium hover:underline underline-offset-4"
-                href="/universities"
-              >
-                Explore Universities
-                <ChevronRightIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                className="flex items-center justify-between text-sm font-medium hover:underline underline-offset-4"
-                href="/blog"
-              >
-                Blogs
-                <ChevronRightIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                className="flex items-center justify-between text-sm font-medium hover:underline underline-offset-4"
-                href="/ask-our-experts"
-              >
-                Ask our Experts
-                <ChevronRightIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                className="flex items-center justify-between text-sm font-medium hover:underline underline-offset-4"
-                href="/about"
-              >
-                About
-                <ChevronRightIcon className="h-4 w-4" />
-              </Link>
-              <SignedOut>
-                <Link href={"/sign-in"}>
-                  <Button size="sm" variant="outline">
-                    Sign In
-                  </Button>
+            <div className="mt-12 grid gap-4">
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/"
+                >
+                  Home
+                  <ChevronRightIcon className="h-4 w-4" />
                 </Link>
-              </SignedOut>
-              <SignedIn>
-                {/* <AvatarDropdown /> */}
-                <SignOutButton>
-                  <Button
-                    size="sm"
-                    className="bg-red-200 w-full"
-                    variant="outline"
-                  >
-                    Sign Out
-                  </Button>
-                </SignOutButton>
-              </SignedIn>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/universities"
+                >
+                  Explore Universities
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/blog"
+                >
+                  Blogs
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/ask-our-experts"
+                >
+                  Ask our Experts
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/about"
+                >
+                  About
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <SignedOut>
+                  <Link href={"/sign-in"}>
+                    <Button
+                      size="sm"
+                      className="bg-secondary/80 text-slate-50 w-full"
+                      variant="outline"
+                    >
+                      Sign In
+                    </Button>
+                  </Link>
+                </SignedOut>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <SignedIn>
+                  {/* <AvatarDropdown /> */}
+                  <SignOutButton>
+                    <Button
+                      size="sm"
+                      className="bg-red-600 text-slate-50 w-full"
+                      variant="outline"
+                    >
+                      Sign Out
+                    </Button>
+                  </SignOutButton>
+                </SignedIn>
+              </SheetTrigger>
             </div>
           </SheetContent>
         </Sheet>

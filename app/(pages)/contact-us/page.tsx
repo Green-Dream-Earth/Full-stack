@@ -14,9 +14,9 @@ function ContactUs() {
   const sendEmail = (e: any) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm('service_ugsrfco', 'template_cd5hu05', form.current, {
-        publicKey: 'YOUR_PUBLIC_KEY',
+    // @ts-ignore
+    emailjs.sendForm('service_ugsrfco', 'template_cd5hu05', form.current, {
+        publicKey: 'i1TwefFnhVXtYhF-U',
       })
       .then(
         () => {
@@ -112,6 +112,7 @@ function ContactUs() {
           <p className="leading-relaxed mb-5 text-gray-600">
             Write us a mail and let&apos;s take this discussion further!
           </p>
+          {/* @ts-ignore */}
           <form ref={form} onSubmit={sendEmail}>
             <div className="relative mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">
@@ -164,7 +165,7 @@ function ContactUs() {
                 defaultValue={""}
               />
             </div>
-            <button type="submit" value={"Send"} className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <button type="submit" value={"Send"} className="text-white w-full bg-primary/90 border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded text-lg">
               Send!
             </button>
 

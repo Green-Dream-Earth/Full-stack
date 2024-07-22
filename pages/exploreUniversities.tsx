@@ -67,7 +67,7 @@ export default function ExploreUniversities() {
                   {
                     id: 1,
                     title: "United States",
-                    link: "/united_states",
+                    link: "/us",
                   },
                   {
                     id: 2,
@@ -77,12 +77,12 @@ export default function ExploreUniversities() {
                   {
                     id: 3,
                     title: "Canada",
-                    link: "/swz",
+                    link: "/can",
                   },
                   {
                     id: 4,
                     title: "Australia",
-                    link: "/swz",
+                    link: "/aus",
                   },
                   {
                     id: 5,

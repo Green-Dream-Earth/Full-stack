@@ -38,12 +38,12 @@ export default function Navbar() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/universities"
             >
               Explore Universities
-            </Link>
+            </Link> */}
             <Link
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/blog"

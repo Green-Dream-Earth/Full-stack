@@ -1,11 +1,33 @@
+'use client'
+
 import { Button } from "@/components/button";
 import { H1 } from "@/components/heading";
-
+import emailjs from '@emailjs/browser';
 import { howitworks } from "@/data/staticData";
 
-import React from "react";
+import React, { useRef } from "react";
 
 function ContactUs() {
+
+  const form = useRef();
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_ugsrfco', 'template_cd5hu05', form.current, {
+        publicKey: 'YOUR_PUBLIC_KEY',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+
   return (
     <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-12 mx-auto flex sm:flex-nowrap flex-wrap">
@@ -44,7 +66,7 @@ function ContactUs() {
               marginWidth={0}
               scrolling="no"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16666.675928405763!2d77.30434899884847!3d28.57765890220617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce45a2fec4393%3A0xaa5938d112af449e!2sNoida%20Sector%203%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1719311552071!5m2!1sen!2sin"
-              // style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
+            // style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
             />
           </div>
           <div className="h-[50%] flex">
@@ -58,7 +80,7 @@ function ContactUs() {
               marginWidth={0}
               scrolling="no"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4965.712777572964!2d-0.19275405402844795!3d51.51585066370139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761aaa9e1f89b9%3A0xa37d399bdb6d260b!2s11%20Porchester%20Rd%2C%20London%20W6%208NS%2C%20UK!5e0!3m2!1sen!2sin!4v1719484439198!5m2!1sen!2sin"
-              // style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
+            // style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
             />
             {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16666.675928405763!2d77.30434899884847!3d28.57765890220617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce45a2fec4393%3A0xaa5938d112af449e!2sNoida%20Sector%203%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1719311552071!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             <div className="bg-slate-50 w-1/2 relative flex flex-wrap py-6 rounded shadow-md">
@@ -90,59 +112,64 @@ function ContactUs() {
           <p className="leading-relaxed mb-5 text-gray-600">
             Write us a mail and let&apos;s take this discussion further!
           </p>
-          <div className="relative mb-4">
-            <label htmlFor="name" className="leading-7 text-sm text-gray-600">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-          <div className="relative mb-4">
-            <label htmlFor="email" className="leading-7 text-sm text-gray-600">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-          <div className="relative mb-4">
-            <label htmlFor="phone" className="leading-7 text-sm text-gray-600">
-              Phone Number
-            </label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="relative mb-4">
+              <label htmlFor="name" className="leading-7 text-sm text-gray-600">
+                Name
+              </label>
+              <input
+                required
+                type="text"
+                id="name"
+                name="user_name"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div className="relative mb-4">
+              <label htmlFor="email" className="leading-7 text-sm text-gray-600">
+                Email
+              </label>
+              <input
+                required
+                type="email"
+                id="email"
+                name="user_email"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div className="relative mb-4">
+              <label htmlFor="phone" className="leading-7 text-sm text-gray-600">
+                Phone Number
+              </label>
+              <input
+                required
+                type="text"
+                id="phone"
+                name="user_phone"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
 
-          <div className="relative mb-4">
-            <label
-              htmlFor="message"
-              className="leading-7 text-sm text-gray-600"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-              defaultValue={""}
-            />
-          </div>
-          {/* <button className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            Button
-          </button> */}
+            <div className="relative mb-4">
+              <label
+                htmlFor="message"
+                className="leading-7 text-sm text-gray-600"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                defaultValue={""}
+              />
+            </div>
+            <button type="submit" value={"Send"} className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              Send!
+            </button>
 
-          <Button variant="primary">Send!</Button>
+            {/* <Button variant="primary">Send!</Button> */}
+          </form>
           <p className="text-xs text-gray-500 mt-3">
             send us a mail for any buisness or consulting inquiries by hitting
             the send button
@@ -227,7 +254,7 @@ function ContactUs() {
       <section id="reasons" className="text-gray-600 bg-slate-50 py-10">
         <div className="container mx-auto flex flex-wrap">
           <h2 className="text-center font-bold text-3xl w-full mx-auto">
-          What Happens After You Contact Us For free Consultation
+            What Happens After You Contact Us For free Consultation
           </h2>
           {/* <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-center">
             Our team with combined experience of 20+ years will help you at
@@ -272,14 +299,13 @@ function ContactUs() {
                   </div>
                   <h3
                     className="title-font text-base text-gray-700 px-4"
-                    // style={{
-                    //   padding: index % 2 == 0 ? "" : "row-reverse",
-                    // }}
+                  // style={{
+                  //   padding: index % 2 == 0 ? "" : "row-reverse",
+                  // }}
                   >
                     <span className="font-semibold text-primary">
-                      {`${reason.description.split(" ")[0]} ${
-                        reason.description.split(" ")[1]
-                      }`}
+                      {`${reason.description.split(" ")[0]} ${reason.description.split(" ")[1]
+                        }`}
                     </span>
                     &nbsp;
                     {reason.description.split(" ").slice(2).join(" ")}

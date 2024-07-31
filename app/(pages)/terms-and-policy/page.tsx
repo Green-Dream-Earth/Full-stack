@@ -127,9 +127,7 @@ const Policy = () => {
                     </h3>
                     <p className="text-lg text-slate-500 text-justify">For additional T&Cs related to Waygood EdTech Study Abroad Scholarship programme, please check the scholarship page T&C                    </p>
 
-                    <p className="pt-7 text-lg text-slate-800 text-justify">
-                        If you have any questions or concerns about these terms and services, please contact us at: HelpStudyAbroad.com <br /> Email: support@helpstudyabroad.com <br />Phone: [Insert Phone Number] <br />Address: [Insert Address] <br />By using HelpStudyAbroad.com, you acknowledge that you have read, understood, and agree to be bound by these terms and services.
-                    </p></div>
+                    </div>
             </div>
         </section>
     )

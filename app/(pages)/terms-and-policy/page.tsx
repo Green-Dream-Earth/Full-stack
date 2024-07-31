@@ -52,7 +52,7 @@ const Policy = () => {
                             <ul className='list-disc'>
                                 <li>to another person and to which the user does not have any right to;
                                 </li>
-                                <li>is grossly harmful, harassing, blasphemous defamatory, obscene, pornographic, paedophilic, libellous, invasive of another's privacy, hateful, or racially, ethnically objectionable, disparaging, relating or encouraging money laundering or gambling, or otherwise unlawful in any manner whatever;
+                                <li>is grossly harmful, harassing, blasphemous defamatory, obscene, pornographic, paedophilic, libellous, invasive of another&apos;s privacy, hateful, or racially, ethnically objectionable, disparaging, relating or encouraging money laundering or gambling, or otherwise unlawful in any manner whatever;
                                 </li>
                                 <li>harm minors in any way;</li>
                                 <li>infringes any patent, trademark, copyright or other proprietary rights;

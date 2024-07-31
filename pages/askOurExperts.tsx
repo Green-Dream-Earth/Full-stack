@@ -144,7 +144,7 @@ export default function AskOurExperts() {
                 <img
                   alt="testimonial"
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-                  src="https://dummyimage.com/302x302"
+                  src="https://plus.unsplash.com/premium_photo-1682089869602-2ec199cc501a"
                 />
                 <p className="leading-relaxed">
                   HelpStudyAbroad.com made my dream of studying overseas a
@@ -154,7 +154,7 @@ export default function AskOurExperts() {
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-primary mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
-                  HOLDEN CAULFIELD
+                  BHAVESH KULKARNI
                 </h2>
                 <p className="text-gray-500">PHD in Product Designing, MIT</p>
               </div>
@@ -164,7 +164,7 @@ export default function AskOurExperts() {
                 <img
                   alt="testimonial"
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-                  src="https://dummyimage.com/300x300"
+                  src="https://plus.unsplash.com/premium_photo-1686244745070-44e350da9d37"
                 />
                 <p className="leading-relaxed">
                   Navigating the complexities of studying abroad was a breeze
@@ -174,7 +174,7 @@ export default function AskOurExperts() {
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-primary mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
-                  ALPER KAMU
+                  VINITA GIRASE
                 </h2>
                 <p className="text-gray-500">
                   Masters in User Experience, Oxford
@@ -186,7 +186,7 @@ export default function AskOurExperts() {
                 <img
                   alt="testimonial"
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
-                  src="https://dummyimage.com/305x305"
+                  src="https://images.unsplash.com/photo-1541657333963-d31b55f58de1"
                 />
                 <p className="leading-relaxed">
                   I highly recommend HelpStudyAbroad.com for anyone considering
@@ -196,7 +196,7 @@ export default function AskOurExperts() {
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-primary mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
-                  HENRY LETHAM
+                  ALEX SMITH
                 </h2>
                 <p className="text-gray-500">Bachelors in Physcology</p>
               </div>

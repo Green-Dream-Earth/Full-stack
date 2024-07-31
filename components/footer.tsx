@@ -27,7 +27,7 @@ export const Footer = () => {
                   className="hover:underline hover:underline-offset-2"
                   href="/careers"
                 >
-                  Apply on LinkedIn
+                  Jobs
                 </Link>
                 <Link
                   className="hover:underline hover:underline-offset-2"
@@ -37,7 +37,7 @@ export const Footer = () => {
                 </Link>
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="/about"
+                  href="/contact-us"
                 >
                   Help Center
                 </Link>

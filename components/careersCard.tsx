@@ -20,7 +20,7 @@ const Card = ({ role, location, duration, link }: { role: string, location: stri
                         </div>
                     </div>
                     <div className="">
-                        <a className="inline-flex text-base text-primary font-semibold items-center">See Details
+                        <a className="inline-flex text-base text-primary font-semibold items-center">Apply on Indeed
                             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>

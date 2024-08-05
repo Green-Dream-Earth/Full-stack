@@ -95,7 +95,7 @@ export function FullBlog() {
           <div className="">
             <div
               className=""
-              contentEditable="true"
+              contentEditable="false"
               dangerouslySetInnerHTML={{ __html: blog.content.rendered }}
             />
           </div>

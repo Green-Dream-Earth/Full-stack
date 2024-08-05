@@ -32,7 +32,8 @@ export function FullBlog() {
 
   const blog = data?.data.find((blog: any) => blog.slug === params?.slug);
   const slug = blog?.slug;
-  console.log("this is blog: ", slug);
+  console.log("this is blog slug : ", slug);
+  console.log("this is blog: ", blog);
 
   const {
     data: comments,
@@ -258,7 +259,7 @@ export function FullBlog() {
           ))}
         </div>
 
-        <div className="grid md:col-span-2 ">
+        <div className="hidden md:block grid md:col-span-2 ">
           <UniSectionCard title={"Recommended Articles"} />
         </div>
       </div>

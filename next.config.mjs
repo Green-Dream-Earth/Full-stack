@@ -25,6 +25,12 @@ const nextConfig = {
         hostname: "greendreamearth.org/**",
         port: "",
       },
+      
+      {
+        protocol: "http",
+        hostname: "greendreamearth.org/**",
+        port: "",
+      },
     ],
   },
   webpack: (config, { isServer }) => {

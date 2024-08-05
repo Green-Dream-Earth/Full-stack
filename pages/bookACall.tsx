@@ -12,7 +12,7 @@ import {
 
 // import { useSession } from "@clerk/clerk-react";
 
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
 
 import Link from "next/link";
 
@@ -128,7 +128,7 @@ function BookingPage() {
                   <SignedOut>
                     <Link href={"/sign-in"}>
                       {" "}
-                      <Button className="w-full text-slate-50">Continue</Button>
+                      <SignUpButton forceRedirectUrl={'/booking'}><Button className="w-full text-slate-50">Continue</Button></SignUpButton>
                     </Link>
                   </SignedOut>
 

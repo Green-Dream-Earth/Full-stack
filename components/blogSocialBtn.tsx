@@ -11,6 +11,7 @@ import {
 } from "react-share";
 
 export const BlogSocialButtonGroup = ({ blog }: { blog: any }) => {
+  console.log("from blogSocialbtns ",blog);
   const pathname = usePathname();
   console.log(pathname);
   return (

@@ -39,12 +39,29 @@ export const extractFirstPContent = (htmlString: string) => {
   return "";
 };
 
+export const extractSecondPContent = (htmlString: string) => {
+  // Create a new DOMParser instance
+  const parser = new DOMParser();
+  // Parse the HTML string into a DOM Document
+  const doc = parser.parseFromString(htmlString, "text/html");
+  // Find all p tags
+  const pTags = doc.querySelectorAll("p");
+  // Check if there are at least two p tags
+  if (pTags.length > 1) {
+    // Get the text content of the second p tag
+    return pTags[1].textContent;
+  }
+  return "";
+};
+
+
 export const BlogArticleCard = ({ post }: { post: any }) => {
   const router = useRouter();
 
-  const blogContentDescription = extractFirstPContent(post.content.rendered);
-
-  const src = extractImgSrc(post.content.rendered);
+  const blogContentDescription = extractSecondPContent(post.content.rendered);
+  
+  // const src = extractImgSrc(post.content.rendered);
+  const src = post.jetpack_featured_media_url;
 
   return (
     <article

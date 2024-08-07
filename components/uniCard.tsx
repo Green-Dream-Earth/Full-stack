@@ -14,7 +14,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getAllBlogs } from "@/utils/query";
 import Loading from "./loading";
 import { formatDate } from "@/lib/utils";
-import { extractImgSrc } from "./blogArticleCard";
+import { extractImgSrc, extractSecondPContent } from "./blogArticleCard";
 import Link from "next/link";
 
 interface UniversityProps {
@@ -208,6 +208,7 @@ const UniSectionElement = ({
               <h3 className="title-font font-medium text-base text-gray-700">
                 {blogData.title.rendered}
               </h3>
+              <p className="text-xs text-slate-400 line-clamp-2">{extractSecondPContent(blogData.content.rendered)}</p>
               <div className="flex items-center">
                 {/* <p className="text-gray-900 text-xs ">John Doe</p>
               <span className="text-center text-slate-500 mx-1">.</span> */}

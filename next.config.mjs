@@ -31,6 +31,12 @@ const nextConfig = {
         hostname: "greendreamearth.org/**",
         port: "",
       },
+
+      {
+        protocol: "https",
+        hostname: "images.pexels.com/**",
+        port: "",
+      },
     ],
   },
   webpack: (config, { isServer }) => {

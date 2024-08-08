@@ -18,7 +18,7 @@ const WebinarForm = () => {
                         <a href="#" className="hover:underline">Free Consultation on Universities in Germany</a>
                     </h3>
                     <p className="text-md text-gray-500">
-                        Are you considering pursuing higher education in Germany but unsure where to start? Join our free webinar, "Unlock Your Future: Free Consultation on Universities in Germany," where experts will guide you through everything you need to know about studying at top German universities.</p>
+                        Are you considering pursuing higher education in Germany but unsure where to start? Join our free webinar, &quot;Unlock Your Future: Free Consultation on Universities in Germany,&quot; where experts will guide you through everything you need to know about studying at top German universities.</p>
                 </div>
 
             </div>

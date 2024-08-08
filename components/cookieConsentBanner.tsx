@@ -37,7 +37,9 @@ const CookieConsentBanner = () => {
                 <button className="text-xs text-gray-800 underline transition-colors duration-300 hover:text-gray-600 focus:outline-none">
                     Manage your preferences
                 </button>
-                <button className=" text-xs bg-gray-900 font-medium rounded-lg hover:bg-gray-700 text-white px-4 py-2.5 duration-300 transition-colors focus:outline-none">
+                <button onClick={() => {
+                    setIsVisible(false);
+                }} className=" text-xs bg-gray-900 font-medium rounded-lg hover:bg-gray-700 text-white px-4 py-2.5 duration-300 transition-colors focus:outline-none">
                     Accept
                 </button>
             </div>

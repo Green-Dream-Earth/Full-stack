@@ -24,7 +24,7 @@ export const getUniversity = async (uni_id: any) => {
 
 export const getAllBlogs = async () => {
     try {
-        const blogs = axios.get(`https://greendreamearth.org/wp-json/wp/v2/posts`)
+        const blogs = axios.get(`https://greendreamearth.org/wp-json/wp/v2/posts?per_page=50`)
         return blogs
     } catch (error) {
         console.log(error)

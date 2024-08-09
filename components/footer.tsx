@@ -44,38 +44,38 @@ export const Footer = () => {
               </div>
             </div>
             <div className="space-y-4 col-span-2">
-              <h4 className="text-lg font-semibold">Top 10 Universities</h4>
+              <h4 className="text-lg font-semibold">Why Study Abroad</h4>
               <nav className="grid gap-2 text-gray-400">
                 <FooterElement
-                  title="University of Cambridge, UK"
-                  href="/universities/university-of-cambridge"
+                  title="Explore World-Class Education: Top 8 Universities in New Zealand"
+                  href="/blog/explore-world-class-education-top-10-universities-in-new-zealand"
                 />
                 <FooterElement
-                  title="Standford University, US"
-                  href="/universities/stanford-university"
+                  title="Why Germany is a Popular Destination to Study Abroad"
+                  href="/blog/why-germany-is-a-popular-destination-to-study-abroad"
                 />
                 <FooterElement
-                  title="Massachusetts Tech, US"
-                  href="/universities/massachusetts-institute-of-technology"
+                  title="Why the UK is a Popular Destination to Study Abroad"
+                  href="/blog/why-the-uk-is-a-popular-destination-to-study-abroad"
                 />
                 <Link
                   className="hover:underline hover:underline-offset-2"
-                  href="/more"
+                  href="/blog"
                 >
-                  And Many More!
+                  Read More!
                 </Link>
               </nav>
             </div>
             <div className="space-y-4 col-span-2">
               <h4 className="text-lg font-semibold">Popular Destinations</h4>
               <nav className="grid gap-2 text-gray-400">
-                <FooterElement title="United States" href="" />
-                <FooterElement title="United Kingdom" />
-                <FooterElement title="Canada" />
-                <FooterElement title="Australia" />
-                <FooterElement title="Newzeland" />
-                <FooterElement title="Ireland" />
-                <FooterElement title="Germany" />
+                <FooterElement title="United States" href="/blog/why-the-usa-is-a-popular-destination-to-study-abroad" />
+                <FooterElement title="United Kingdom" href="/blog/why-the-uk-is-a-popular-destination-to-study-abroad" />
+                <FooterElement title="Canada" href="/blog/why-canada-is-a-popular-destination-to-study-abroad" />
+                <FooterElement title="Australia" href="/blog/why-australia-is-a-popular-destination-to-study-abroad" />
+                <FooterElement title="Newzeland" href="/blog/explore-world-class-education-top-10-universities-in-new-zealand" />
+                <FooterElement title="Ireland" href="/blog/discover-the-top-10-ranked-universities-in-ireland" />
+                <FooterElement title="Germany" href="/blog/top-10-ranked-universities-in-germany-for-indian-students" />
               </nav>
             </div>
             <div className="space-y-4 col-span-2">

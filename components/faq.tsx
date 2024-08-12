@@ -15,7 +15,7 @@ export function Faq() {
           Frequently Asked Questions
         </h2>
       </div>
-      <Accordion type="single" collapsible className="flex flex-col justify-center">
+      <Accordion type="single" collapsible className="flex flex-col items-center justify-center">
         {faqs.map((faq) => (
           <AccordionItem className="max-w-4xl w-full" key={faq.id} value={`item-${faq.id}`}>
             <AccordionTrigger className="text-left">

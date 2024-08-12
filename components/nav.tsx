@@ -50,12 +50,12 @@ export default function Navbar() {
             >
               Blogs
             </Link>
-            <Link
+            {/* <Link
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/webinars"
             >
               Webinars
-            </Link>
+            </Link> */}
             <Link
               className="text-sm font-medium hover:underline underline-offset-4 text-slate-600"
               href="/ask-our-experts"

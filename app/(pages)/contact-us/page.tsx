@@ -115,7 +115,7 @@ function ContactUs() {
           {/* @ts-ignore */}
           <form ref={form} onSubmit={sendEmail}>
             <div className="relative mb-4">
-              <label htmlFor="name" className="leading-7 text-sm text-gray-600">
+              <label htmlFor="name" className="leading-7 text-sm font-semibold text-gray-600">
                 Name
               </label>
               <input
@@ -127,7 +127,7 @@ function ContactUs() {
               />
             </div>
             <div className="relative mb-4">
-              <label htmlFor="email" className="leading-7 text-sm text-gray-600">
+              <label htmlFor="email" className="leading-7 text-sm font-semibold text-gray-600">
                 Email
               </label>
               <input
@@ -139,7 +139,7 @@ function ContactUs() {
               />
             </div>
             <div className="relative mb-4">
-              <label htmlFor="phone" className="leading-7 text-sm text-gray-600">
+              <label htmlFor="phone" className="leading-7 text-sm font-semibold text-gray-600">
                 Phone Number
               </label>
               <input
@@ -154,7 +154,7 @@ function ContactUs() {
             <div className="relative mb-4">
               <label
                 htmlFor="message"
-                className="leading-7 text-sm text-gray-600"
+                className="leading-7 text-sm font-semibold text-gray-600"
               >
                 Message
               </label>

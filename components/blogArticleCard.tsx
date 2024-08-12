@@ -78,14 +78,14 @@ export const BlogArticleCard = ({ post }: { post: any }) => {
         className="rounded-md border bg-muted transition-colors h-48"
       />
       {/* )} */}
-      <h2 className="text-xl font-extrabold">{post.title.rendered}</h2>
+      <h2 className="text-xl font-bold text-gray-600">{post.title.rendered}</h2>
 
-      <p className="text-muted-foreground text-sm line-clamp-3">
+      <p className="text-muted-foreground text-gray-500 text-base line-clamp-3">
         {/* {post.description.slice(0, 100) + "..."} */}
         {blogContentDescription}
       </p>
       <div className="flex flex-row justify-between items-center bottom-0">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-gray-600 text-muted-foreground">
           {formatDate(post.modified)}
         </p>
         {/* <div className="text-center mt-2 leading-none flex justify-center ">
@@ -120,7 +120,7 @@ export const BlogArticleCard = ({ post }: { post: any }) => {
           </span>
           
         </div> */}
-        <p className="text-light text-sm text-center text-gray-400">
+        <p className="text-light text-sm text-center text-gray-500">
           2 minute read
         </p>
       </div>

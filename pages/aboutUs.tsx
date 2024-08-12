@@ -21,7 +21,7 @@ export default function AboutUs() {
               About Us
               {/* <br className="hidden lg:inline-block" /> */}
             </H1>
-            <p className="my-8 leading-relaxed">
+            <p className="my-6 leading-relaxed text-lg text-gray-600">
               Empowering students and young professionals gain access to world
               class education regardless of their economic and financial
               background. We bring 20+ years of combined experience to guide you
@@ -41,10 +41,10 @@ export default function AboutUs() {
         <div className="container py-6 lg:py-10">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-center md:text-left font-bold text-3xl w-full">
+              <h2 className="text-center md:text-left font-bold text-gray-600 text-3xl w-full">
                 Our Approach
               </h2>
-              <p className="text-gray-500 text-lg  ">
+              <p className="text-gray-500 text-lg">
                 We believe in a student-centric approach, focusing on individual
                 needs and aspirations. Our team of experienced counsellors works
                 closely with each student, providing customized advice and
@@ -54,7 +54,7 @@ export default function AboutUs() {
               </p>
             </div>
             <div>
-              <h2 className="text-center md:text-left font-bold text-3xl w-full">
+              <h2 className="text-center md:text-left font-bold text-gray-600 text-3xl w-full">
                 Our Mission
               </h2>
               <p className="text-gray-500 text-lg">

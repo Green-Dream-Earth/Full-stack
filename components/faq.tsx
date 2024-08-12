@@ -21,7 +21,7 @@ export function Faq() {
             <AccordionTrigger className="text-left">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="flex justify-between text-gray-600">
+            <AccordionContent className="flex justify-between text-gray-500">
               <div className="w-[70%]">{faq.answer}</div>
               <Button variant="secondary" redirectPath="/booking" className="h-12">Take Action Now!</Button>
             </AccordionContent>

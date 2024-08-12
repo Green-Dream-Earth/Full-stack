@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-gradient-to-b from-primary/10 to-15% min-h-screen font-sans antialiased"
+          "bg-gradient-to-b from-primary/10 to-15% min-h-screen font-sans antialiased selection:bg-primary/20 selection:text-primary"
         )}
       >
         <AntdRegistry>

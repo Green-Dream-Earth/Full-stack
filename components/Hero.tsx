@@ -10,10 +10,10 @@ export default function Hero() {
         <div className="flex flex-col space-y-4">
           <div className="space-y-3">
             <H1 className="">Begin your Study Abroad Journey</H1>
-            <p className="text-lg font-semibold pt-4">
+            <p className="text-lg text-gray-600 font-semibold pt-4">
               Click below and take your best decision of the day!
             </p>
-            <div className="text-slate-700 ">
+            <div className="text-slate-500 ">
               What we offer in this call?
               <ul className="list-disc px-6">
                 <li>Free Profile Analysis.</li>

@@ -87,7 +87,7 @@ export default function TestemonialCarousel() {
           <h2 className="text-gray-600 text-center font-bold text-3xl w-full mx-auto">
             What Our Students Say!
           </h2>
-          <p className="text-base leading-relaxed mx-auto">
+          <p className="text-base text-gray-500 leading-relaxed mx-auto">
             Hear from our students about their experiences with our program
           </p>
         </div>

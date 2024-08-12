@@ -9,7 +9,7 @@ export const CTA = () => {
           <h2 className="text-center font-bold text-3xl w-full mx-auto">
             We follow Six Steps for your guaranteed Success!
           </h2>
-          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+          <p className="text-base text-gray-500 leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
             Our international team with combined experience of 20+ years will
             help you at every step of the process to ensure that you achieve
             great success in your study abroad journey

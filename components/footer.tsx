@@ -67,15 +67,15 @@ export const Footer = () => {
               </nav>
             </div>
             <div className="space-y-4 col-span-2">
-              <h4 className="text-lg font-semibold">Popular Destinations</h4>
+              <h4 className="text-lg font-semibold">Top Destinations</h4>
               <nav className="grid gap-2 text-gray-400">
-                <FooterElement title="United States" href="/blog/why-the-usa-is-a-popular-destination-to-study-abroad" />
-                <FooterElement title="United Kingdom" href="/blog/why-the-uk-is-a-popular-destination-to-study-abroad" />
-                <FooterElement title="Canada" href="/blog/why-canada-is-a-popular-destination-to-study-abroad" />
-                <FooterElement title="Australia" href="/blog/why-australia-is-a-popular-destination-to-study-abroad" />
-                <FooterElement title="Newzeland" href="/blog/explore-world-class-education-top-10-universities-in-new-zealand" />
-                <FooterElement title="Ireland" href="/blog/discover-the-top-10-ranked-universities-in-ireland" />
-                <FooterElement title="Germany" href="/blog/top-10-ranked-universities-in-germany-for-indian-students" />
+                <FooterElement title="Explore United States" href="/blog/why-the-usa-is-a-popular-destination-to-study-abroad" />
+                <FooterElement title="Explore United Kingdom" href="/blog/why-the-uk-is-a-popular-destination-to-study-abroad" />
+                <FooterElement title="Explore Canada" href="/blog/why-canada-is-a-popular-destination-to-study-abroad" />
+                <FooterElement title="Explore Australia" href="/blog/why-australia-is-a-popular-destination-to-study-abroad" />
+                <FooterElement title="Explore Newzeland" href="/blog/explore-world-class-education-top-10-universities-in-new-zealand" />
+                <FooterElement title="Explore Ireland" href="/blog/discover-the-top-10-ranked-universities-in-ireland" />
+                <FooterElement title="Explore Germany" href="/blog/top-10-ranked-universities-in-germany-for-indian-students" />
               </nav>
             </div>
             <div className="space-y-4 col-span-2">

@@ -10,7 +10,7 @@ const Reasons = () => {
         <h2 className="text-center font-bold text-3xl w-full mx-auto">
           Reasons to book a free consultation now
         </h2>
-        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-center">
+        <p className="text-base text-gray-500 leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-center">
           Our team with combined experience of 20+ years will help you at every
           step of the process to ensure that you achieve great success in your
           study abroad journey

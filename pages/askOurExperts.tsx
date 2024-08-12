@@ -45,7 +45,7 @@ export default function AskOurExperts() {
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left text-center">
             <div className="space-y-2 mb-4">
               <H1 className="mb-4">Ask Our Experts</H1>
-              <p className="max-w-[700px] text-gray-500 md:text-xl">
+              <p className="max-w-[700px] text-lg text-gray-500">
                 Planning to study abroad can be an exciting yet
                 overwhelming experience. Our experts are dedicated to
                 guiding you through every step of the process, ensuring that
@@ -68,7 +68,7 @@ export default function AskOurExperts() {
           <h2 className="text-center font-bold text-3xl w-full mx-auto">
             How It Works
           </h2>
-          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-center">
+          <p className="text-base text-slate-500 leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-center">
             Steps to help you at every step of the process in your study abroad
             journey
           </p>
@@ -132,7 +132,7 @@ export default function AskOurExperts() {
       </section>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <h2 className="text-center font-bold text-3xl w-full mx-auto">
+          <h2 className="text-center text-slate-600 font-bold text-3xl w-full mx-auto">
             Our Success Stories
           </h2>
           {/* <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-center">
@@ -146,14 +146,14 @@ export default function AskOurExperts() {
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
                   src="https://plus.unsplash.com/premium_photo-1682089869602-2ec199cc501a"
                 />
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-base text-gray-500">
                   HelpStudyAbroad.com made my dream of studying overseas a
                   reality with their exceptional guidance and support. Their
                   knowledgeable team provided invaluable advice and handled all
                   the details, allowing me to focus on my studies.
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-primary mt-6 mb-4" />
-                <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+                <h2 className="text-gray-600 font-medium title-font tracking-wider text-sm">
                   BHAVESH KULKARNI
                 </h2>
                 <p className="text-gray-500">PHD in Product Designing, MIT</p>
@@ -166,14 +166,14 @@ export default function AskOurExperts() {
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
                   src="https://plus.unsplash.com/premium_photo-1686244745070-44e350da9d37"
                 />
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-base text-gray-500">
                   Navigating the complexities of studying abroad was a breeze
                   thanks to HelpStudyAbroad.com. Their personalized approach and
                   dedicated support team ensured that I felt confident and
                   prepared every step of the way.
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-primary mt-6 mb-4" />
-                <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+                <h2 className="text-slate-600 font-medium title-font tracking-wider text-sm">
                   VINITA GIRASE
                 </h2>
                 <p className="text-gray-500">
@@ -188,14 +188,14 @@ export default function AskOurExperts() {
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
                   src="https://images.unsplash.com/photo-1541657333963-d31b55f58de1"
                 />
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-base text-gray-500">
                   I highly recommend HelpStudyAbroad.com for anyone considering
                   studying overseas. Their expertise, professionalism, and
                   genuine care for students success set them apart and made my
                   experience truly memorable.
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-primary mt-6 mb-4" />
-                <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+                <h2 className="text-slate-600 font-medium title-font tracking-wider text-sm">
                   ALEX SMITH
                 </h2>
                 <p className="text-gray-500">Bachelors in Physcology</p>

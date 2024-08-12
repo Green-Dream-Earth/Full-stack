@@ -33,7 +33,7 @@ export default function BlogPage() {
       <section className="py-12 flex flex-col items-center justify-center">
         <div className="">
           <H1 className="text-center">Blogs</H1>
-          <p className="text-xl text-muted-foreground mt-7">
+          <p className="text-lg text-gray-500 text-muted-foreground mt-5">
             Find blogs that will help your study abroad journey!
           </p>
         </div>

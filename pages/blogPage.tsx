@@ -91,9 +91,9 @@ export function FullBlog() {
         <div className="grid col-span-4 mx-auto w-full">
           <BlogSocialButtonGroup blog={blog} />
 
-          <h2 className="pt-8">{blog.title.rendered}</h2>
-          <p className=" pb-8">{`Posted on ${formatDate(blog.date)}`}</p>
-          <div className="">
+          <h2 className="pt-8 text-gray-600">{blog.title.rendered}</h2>
+          <p className=" pb-8 text-base text-gray-500">{`Posted on ${formatDate(blog.date)}`}</p>
+          <div className="text-base text-gray-500">
             <div
               className=""
               contentEditable="false"
@@ -101,7 +101,7 @@ export function FullBlog() {
             />
           </div>
 
-          <h3 className="font-light text-3xl text-gray-600 pb-12">
+          <h3 className="font-light text-3xl text-gray-500 pb-12">
             <hr className="mt-24 mb-12 border-[0.5] border-slate-500" />
             Add a Comment
           </h3>

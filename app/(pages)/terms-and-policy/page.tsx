@@ -586,7 +586,7 @@ const Policy = () => {
           <p className="text-lg text-slate-500 text-justify">
             In addition to how we use your information, we share your
             information in the following ways:
-            <ol>
+            <ul className="list-disc">
               <li>
                 <b>Educational partners:</b> We may share your information with
                 universities or program coordinators who developed the program
@@ -652,7 +652,7 @@ const Policy = () => {
                 products or services or other opportunities that may be of
                 interest to you.
               </li>
-            </ol>
+            </ul>
           </p>
           <h3 className="text-2xl text-slate-500 font-bold pt-7">
             Public Disclosure of Information

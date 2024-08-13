@@ -17,40 +17,41 @@ const Policy = () => {
             Introduction
           </h3>
           <p className="text-lg text-slate-500 text-justify">
-            We, at Waygood EdTech Private Limited' and our affiliated companies
-            worldwide, are committed to respecting your online privacy and
-            recognize your need for appropriate protection and management of any
-            personally identifiable information ("Personal Information") you
-            share with us. "Personal Information" means any information that may
-            be used to identify an individual, including, but not limited to, a
-            first and last name, a home or other physical address and an email
-            address or other contact information, whether at work or at home. In
-            general, you can visit Waygood EdTech Private Limited's Web pages
-            without telling us who you are or revealing any Personal Information
-            about yourself.
+            We, at Waygood EdTech Private Limited&apos; and our affiliated
+            companies worldwide, are committed to respecting your online privacy
+            and recognize your need for appropriate protection and management of
+            any personally identifiable information (&apos;Personal
+            Information&apos;) you share with us. &apos;Personal
+            Information&apos; means any information that may be used to identify
+            an individual, including, but not limited to, a first and last name,
+            a home or other physical address and an email address or other
+            contact information, whether at work or at home. In general, you can
+            visit Waygood EdTech Private Limited&apos;s Web pages without
+            telling us who you are or revealing any Personal Information about
+            yourself.
           </p>
           <h3 className="text-2xl text-slate-500 font-bold pt-7">
             Cookies and Other Tracking Technologies
           </h3>
           <p className="text-lg text-slate-500 text-slate-500">
-            Our webpages utilize "cookies" and other tracking technologies. A
-            "cookie" is a small text file that may be used, for example, to
-            collect information about Web site activity. Some cookies and other
-            technologies may serve to recall Personal Information previously
-            indicated by a Web user. Most browsers allow you to control cookies,
-            including whether or not to accept them and how to remove them. You
-            may set most browsers to notify you if you receive a cookie, or you
-            may choose to block cookies with your browser, but please note that
-            if you choose to erase or block your cookies, you will need to
-            re-enter your original user ID and password to gain access to
-            certain parts of the Web site and some sections of the site would
-            not work. Tracking technologies may record information such as
-            Internet domain and host names; Internet protocol (IP) addresses;
-            browser software and operating system types; clickstream patterns;
-            and dates and times that our site is accessed. Our use of cookies
-            and other tracking technologies allows us to improve our Web site
-            and your Web experience. We may also analyze information that for
-            trends and statistics.
+            Our webpages utilize &apos;cookies&apos; and other tracking
+            technologies. A &apos;cookie&apos; is a small text file that may be
+            used, for example, to collect information about Web site activity.
+            Some cookies and other technologies may serve to recall Personal
+            Information previously indicated by a Web user. Most browsers allow
+            you to control cookies, including whether or not to accept them and
+            how to remove them. You may set most browsers to notify you if you
+            receive a cookie, or you may choose to block cookies with your
+            browser, but please note that if you choose to erase or block your
+            cookies, you will need to re-enter your original user ID and
+            password to gain access to certain parts of the Web site and some
+            sections of the site would not work. Tracking technologies may
+            record information such as Internet domain and host names; Internet
+            protocol (IP) addresses; browser software and operating system
+            types; clickstream patterns; and dates and times that our site is
+            accessed. Our use of cookies and other tracking technologies allows
+            us to improve our Web site and your Web experience. We may also
+            analyze information that for trends and statistics.
           </p>
           {/* <ol className="text-lg text-slate-500 list-decimal">
             <li>
@@ -343,10 +344,10 @@ const Policy = () => {
           </h3>
           <p className="text-lg text-slate-500 text-justify">
             By using this Website, you consent to the terms of our Online
-            Privacy Policy and to Waygood EdTech Private Limited's processing of
-            Personal Information for the purposes given above as well as those
-            explained where 'Waygood EdTech Private Limited' collects Personal
-            Information on the Web.
+            Privacy Policy and to Waygood EdTech Private Limited&apos;s
+            processing of Personal Information for the purposes given above as
+            well as those explained where &apos;Waygood EdTech Private
+            Limited&apos; collects Personal Information on the Web.
           </p>
 
           <h3 className="text-2xl text-slate-500 font-bold pt-7">
@@ -372,7 +373,7 @@ const Policy = () => {
           <p className="text-lg text-slate-500 text-justify">
             &apos;Waygood EdTech Private Limited&apos; will not contact children
             under age 13 about special offers or for marketing purposes without
-            a parent's permission.
+            a parent&apos;s permission.
           </p>
 
           <h3 className="text-2xl text-slate-500 font-bold pt-7">
@@ -382,26 +383,27 @@ const Policy = () => {
             &apos;Waygood EdTech Private Limited&apos; does not rent, sell, or
             share personal information about you with other people (save with
             your consent) or non-affiliated companies except to provide products
-            or services you've requested, when we have your permission, or under
-            the following circumstances: Waygood EdTech Private Limited' does
-            not rent, sell, or share personal information about you with other
-            people (save with your consent) or non-affiliated companies except
-            to provide products or services you've requested, when we have your
-            permission, or under the following circumstances:
+            or services you&apos;ve requested, when we have your permission, or
+            under the following circumstances: Waygood EdTech Private
+            Limited&apos; does not rent, sell, or share personal information
+            about you with other people (save with your consent) or
+            non-affiliated companies except to provide products or services
+            you&apos;ve requested, when we have your permission, or under the
+            following circumstances:
             <ul className="list-disc">
               <li>
                 We provide the information to trusted partners who work on
-                behalf of or with 'Waygood EdTech Private Limited' under
-                confidentiality agreements. These companies may use your
+                behalf of or with &apos;Waygood EdTech Private Limited&apos;
+                under confidentiality agreements. These companies may use your
                 personal information to provide services requested by you, help
-                'Waygood EdTech Private Limited' communicate with you about
-                offers from 'Waygood EdTech Private Limited' and our marketing
-                partners. These companies may share your personal information
-                with third parties to provide you the requested service.
-                However, these companies do not have any independent right to
-                share this information for any other purposes then to provide
-                you the requested services or communicate with you about our
-                offers.
+                &apos;Waygood EdTech Private Limited&apos; communicate with you
+                about offers from &apos;Waygood EdTech Private Limited&apos; and
+                our marketing partners. These companies may share your personal
+                information with third parties to provide you the requested
+                service. However, these companies do not have any independent
+                right to share this information for any other purposes then to
+                provide you the requested services or communicate with you about
+                our offers.
               </li>
               <li>
                 We respond to subpoenas, court orders, or legal process, or to
@@ -413,15 +415,15 @@ const Policy = () => {
                 investigate, prevent, or take action regarding illegal
                 activities, suspected fraud, situations involving potential
                 threats to the physical safety of any person, violations of
-                Waygood EdTech Pvt. Ltd.'s terms of use, or as otherwise
+                Waygood EdTech Pvt. Ltd.&apos;s terms of use, or as otherwise
                 required by law.
               </li>
               <li>
-                We transfer information about you if 'Waygood EdTech Private
-                Limited' is acquired by or merged with another company. In this
-                event, 'Waygood EdTech Private Limited' will notify you before
-                information about you is transferred and becomes subject to a
-                different privacy policy.
+                We transfer information about you if &apos;Waygood EdTech
+                Private Limited&apos; is acquired by or merged with another
+                company. In this event, &apos;Waygood EdTech Private
+                Limited&apos; will notify you before information about you is
+                transferred and becomes subject to a different privacy policy.
               </li>
             </ul>
             &apos;Waygood EdTech Private Limited&apos; displays targeted
@@ -764,7 +766,7 @@ const Policy = () => {
             transfer of money does not fall in the wrong hands. Waygood EdTech
             Private Limited shall not be liable for any loss or damage sustained
             by reason of any disclosure (inadvertent or otherwise) of any
-            information concerning the user's account and / or information
+            information concerning the user&apos;s account and / or information
             relating to or regarding online transactions using credit cards /
             debit cards and / or their verification process and particulars nor
             for any error, omission or inaccuracy with respect to any

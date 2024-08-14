@@ -22,7 +22,7 @@ export const Button = ({
   const defaultClassName =
     variant === "secondary"
       ? "bg-slate-200 hover:bg-slate-100 text-slate-700"
-      : "bg-primary hover:bg-primary/80 text-white text-lg";
+      : "bg-primary hover:bg-primary/80 text-white px-4";
   return (
     <button
       className={`rounded-lg px-4 py-1.5 font-semibold ${defaultClassName} ${className}`}

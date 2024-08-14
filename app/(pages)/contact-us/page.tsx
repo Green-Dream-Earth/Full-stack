@@ -32,9 +32,9 @@ function ContactUs() {
     <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-12 mx-auto flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-opacity-20 rounded-lg overflow-hidden sm:mr-10 p-10 flex flex-col gap-4 ">
-          <div className="h-[50%] flex">
+          <div className="h-[50%] flex flex-col md:flex-row">
             {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16666.675928405763!2d77.30434899884847!3d28.57765890220617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce45a2fec4393%3A0xaa5938d112af449e!2sNoida%20Sector%203%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1719311552071!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
-            <div className="bg-slate-50 w-1/2 relative flex flex-wrap py-6 rounded shadow-md">
+            <div className="bg-slate-50 w-full md:w-1/2 relative flex flex-wrap py-6 rounded shadow-md">
               <div className=" px-6">
                 <h2 className="title-font font-bold text-gray-600 tracking-widest text-lg">
                   OUR ADDRESS IN INDIA
@@ -59,7 +59,7 @@ function ContactUs() {
             <iframe
               width="100%"
               height="100%"
-              className="w-1/2"
+              className="w-full md:w-1/2"
               frameBorder={0}
               title="map"
               marginHeight={0}
@@ -69,11 +69,11 @@ function ContactUs() {
             // style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
             />
           </div>
-          <div className="h-[50%] flex">
+          <div className="h-[50%] flex flex-col md:flex-row">
             <iframe
               width="100%"
               height="100%"
-              className="w-1/2"
+              className="w-full md:w-1/2"
               frameBorder={0}
               title="map"
               marginHeight={0}
@@ -83,7 +83,7 @@ function ContactUs() {
             // style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
             />
             {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16666.675928405763!2d77.30434899884847!3d28.57765890220617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce45a2fec4393%3A0xaa5938d112af449e!2sNoida%20Sector%203%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1719311552071!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
-            <div className="bg-slate-50 w-1/2 relative flex flex-wrap py-6 rounded shadow-md">
+            <div className="bg-slate-50 w-full md:w-1/2 relative flex flex-wrap py-6 rounded shadow-md">
               <div className=" px-6">
                 <h2 className="title-font font-bold text-gray-600 tracking-widest text-lg">
                   OUR ADDRESS IN UK

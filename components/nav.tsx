@@ -115,7 +115,7 @@ export default function Navbar() {
                   <ChevronRightIcon className="h-4 w-4" />
                 </Link>
               </SheetTrigger>
-              <SheetTrigger asChild>
+              {/* <SheetTrigger asChild>
                 <Link
                   className="flex items-center justify-between font-medium hover:underline underline-offset-4"
                   href="/universities"
@@ -123,7 +123,7 @@ export default function Navbar() {
                   Explore Universities
                   <ChevronRightIcon className="h-4 w-4" />
                 </Link>
-              </SheetTrigger>
+              </SheetTrigger> */}
               <SheetTrigger asChild>
                 <Link
                   className="flex items-center justify-between font-medium hover:underline underline-offset-4"
@@ -147,7 +147,16 @@ export default function Navbar() {
                   className="flex items-center justify-between font-medium hover:underline underline-offset-4"
                   href="/about"
                 >
-                  About
+                  About Us
+                  <ChevronRightIcon className="h-4 w-4" />
+                </Link>
+              </SheetTrigger>
+              <SheetTrigger asChild>
+                <Link
+                  className="flex items-center justify-between font-medium hover:underline underline-offset-4"
+                  href="/contact-us"
+                >
+                  Contact Us
                   <ChevronRightIcon className="h-4 w-4" />
                 </Link>
               </SheetTrigger>
@@ -156,7 +165,7 @@ export default function Navbar() {
                   <Link href={"/sign-in"}>
                     <Button
                       size="sm"
-                      className="bg-secondary/80 text-slate-50 w-full"
+                      className="bg-primary/70 text-slate-50 w-full hover:bg-primary/90 hover:text-slate-50"
                       variant="outline"
                     >
                       Sign In
